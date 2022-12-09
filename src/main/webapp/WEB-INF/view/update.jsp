@@ -67,8 +67,6 @@
 </style>
 
 <body>
-<tr  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
-
 <div class="container" style="margin-top: 150px">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
