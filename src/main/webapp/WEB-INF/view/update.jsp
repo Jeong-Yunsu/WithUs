@@ -69,18 +69,18 @@
 <body>
 <tr  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
 
-<div class="container">
+<div class="container" style="margin-top: 150px">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
             <h2 class="mb-3" style="font-weight: bold">정보 수정</h2>
         <form action="/update" method="post">
             <div class="mb-3">
                 <label>아이디</label>
-                <input type="text" name="mbr_id" placeholder="아이디" value="${user.mbr_id}" size=50 readonly>
+                <input type="text" style="width: 100%" name="mbr_id" value="${user.mbr_id}" size=50 readonly>
             </div>
             <div class="mb-3">
                 <label>닉네임</label>
-                <input type="text" name="mbr_nick" placeholder="닉네임" value="${user.mbr_nick}" size=50 required>
+                <input type="text" style="width: 100%" name="mbr_nick" value="${user.mbr_nick}" size=50 required>
             </div>
             <div class="mb-3">
                 <label>비밀번호</label>
@@ -94,7 +94,7 @@
             </div>
             <div class="mb-3">
                 <label>전화번호</label>
-                <input type="text" name="mbr_tel" placeholder="전화번호" value="${user.mbr_tel}" size=50 required>
+                <input type="text" style="width: 100%" name="mbr_tel"value="${user.mbr_tel}" size=50 required>
             </div>
             <br>
             <div>

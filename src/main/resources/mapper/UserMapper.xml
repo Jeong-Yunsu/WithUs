@@ -68,8 +68,7 @@
 
     <!-- 탈퇴 -->
     <delete id="deleteUser">
-        DELETE
-        FROM tb_user
+        DELETE FROM tb_user
         WHERE mbr_sn = #{mbr_sn}
     </delete>
 
