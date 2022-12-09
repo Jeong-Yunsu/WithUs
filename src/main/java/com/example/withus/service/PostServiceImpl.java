@@ -3,10 +3,13 @@ package com.example.withus.service;
 import com.example.withus.mapper.PostMapper;
 import com.example.withus.vo.PostVo;
 import lombok.RequiredArgsConstructor;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +32,19 @@ public class PostServiceImpl implements PostService {
 
     public List<PostVo> getmbrPostList(Integer mbr_sn) {
         return postMapper.getmbrPostList(mbr_sn);
+    }
+
+    @Override
+    public Map<String, Object> readjosn(Integer group) {
+
+        List<PostVo> readlist = postMapper.getPostList(group);
+
+        JSONArray jsonArray = JSONArray.fromObject(readlist);
+
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("readlist",jsonArray);
+
+        return result;
     }
 }

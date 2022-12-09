@@ -11,4 +11,7 @@ public interface PostMapper {
     void insertPost(PostVo postVo);
 
     List<PostVo> getmbrPostList(Integer mbr_sn);
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.example.withus.Controller;
 
 import com.example.withus.service.PostServiceImpl;
+import com.example.withus.service.ScheduleServiceImpl;
 import com.example.withus.service.UserService;
 import com.example.withus.service.UserServiceImpl;
 import com.example.withus.vo.LoginResponse;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class MainController {
@@ -21,6 +23,9 @@ public class MainController {
 
     @Autowired
     private PostServiceImpl postServiceImpl;
+
+    @Autowired
+    private ScheduleServiceImpl scheduleServiceImpl;
 
     @RequestMapping("/")
     public String firstPage() {
@@ -38,12 +43,16 @@ public class MainController {
     }
 
     @RequestMapping("/date")
-    public String datePage() {
+    public String datePage(HttpSession session, Model model) {
+        Integer mbr_sn = (Integer) session.getAttribute("userSn");
+        Map<String, Object> result = scheduleServiceImpl.getsclist(mbr_sn);
+        model.addAttribute("sclist", result.get("sclist"));
+
         return "date";
     }
 
     @RequestMapping("/main")
-    public String postList(HttpSession session, Model model) {
+    public String postList(HttpSession session, Model model, PostVo postVo) {
 
         Integer group = 1;
         List<PostVo> postList = postServiceImpl.getPostList(group);
@@ -52,6 +61,13 @@ public class MainController {
         Integer mbr_sn = (Integer) session.getAttribute("userSn");
         List<PostVo> postmbrlist = postServiceImpl.getmbrPostList(mbr_sn);
         model.addAttribute("postmbrlist", postmbrlist);
+
+        Map<String, Object> result = postServiceImpl.readjosn(group);
+        model.addAttribute("readlist", result.get("readlist"));
+
+        System.out.println(postList);
+        System.out.println(result);
+
         return "main";
     }
 
