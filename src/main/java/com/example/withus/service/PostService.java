@@ -15,4 +15,5 @@ public interface PostService {
 
     Map<String, Object> readjosn(Integer group);
 
+    public Map<String, Object> readmbrjosn(Integer group);
 }

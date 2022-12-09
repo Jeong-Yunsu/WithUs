@@ -33,6 +33,9 @@ $(document).ready(function(){
                 axios.get(url, config).then(function(result) {
                     // 만약 API호출을 통해 가져온 주소가 있을 경우 주소의 길이만큼 키워드 검색 API호출
                     if(result.data.documents.length != 0 && result.data != undefined && result.data != null){
+
+                        console.log(result);
+
                         // 결과를 목록에 담음
                         self.searchResult.push(result.data.documents);
                         for(var i=0; i<self.searchResult[0].length;i++){
