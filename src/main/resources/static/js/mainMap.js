@@ -1,6 +1,7 @@
 var map;
 var lati,longi;
 var infoWindow;
+var SearchMarkerList=[];
 var markerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
@@ -11,21 +12,25 @@ var readlist=[
     {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"df","txt_date":"2022-11-28","txt_loc_lat":"35.8994466","txt_loc_lng":"128.6659961","txt_nm":"asd","txt_pic":"","txt_sn":59},
     {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"gdgd","txt_date":"2022-12-09","txt_loc_lat":"35.8752475","txt_loc_lng":"128.6974102","txt_nm":"안녕하세요","txt_pic":"","txt_sn":60}
 ];
-$(document).ready(function(){
-    //var dataForm = $("#readlist");
-    // $(document).ready(function(){
-    //     var dataForm = $("#readlist");
-    //
-    //     dataForm.forEach(function (n) {
-    //         console.log(n.txt_loc_lat);
-    //         console.log(n.txt_loc_lng);
-    //     });
-    // });
-    console.log("data: "+readlist);
-    console.log(readlist);
-});
 
-function map() {
+$(document).ready(function(){
+
+    // 코드수정 반영 디버깅용
+    //alert(crd.latitude+","+crd.longitude);
+
+    // console.log("data: "+readlist);
+
+
+});
+function myFunction() {
+    // var x = document.getElementById("myInput");
+    // document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
+
+    getData($("#searchInput").val());
+
+}
+
+function setMap() {
 
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
@@ -46,8 +51,14 @@ function map() {
     infoWindow = new naver.maps.InfoWindow({
         anchorSkew: true
     });
+    infoWindow.setContent([
+        '<div class="iw_inner">',
+        '   <h3>ME</h3>',
+        '</div>'
+    ].join(''));
+    infoWindow.open(map, marker);
 
-    setMyData(); // 게시물 지도에 마커로 표시
+    setData(readlist); // 게시물 지도에 마커로 표시
 
     map.setCursor('pointer');
     map.getPanes().floatPane.appendChild(menuLayer[0]);
@@ -81,43 +92,6 @@ function map() {
         menuLayer.hide();
     });
 
-    function setMyData(){
-        readlist.forEach(function (item){
-
-            let itTitle = item.test_nm;
-            //let itTxt = item.txt_cn;
-            let itLocation = new naver.maps.LatLng(item.txt_loc_lat, item.txt_loc_lng);
-
-            var marker = new naver.maps.Marker({
-                map: map,
-                position: itLocation
-            });
-
-            var infowindow = new naver.maps.InfoWindow({
-                maxWidth: 500,
-                backgroundColor: "#eee",
-                borderColor: "#2db400",
-                borderWidth: 5,
-                anchorSize: new naver.maps.Size(30, 30),
-                anchorSkew: true,
-                anchorColor: "#eee",
-                pixelOffset: new naver.maps.Point(20, -20)
-            });
-
-            infowindow.setContent([
-                '<div class="iw_inner">',
-                '   <h3>'+item.test_nm+'</h3>',
-                '</div>'
-            ].join(''));
-
-            naver.maps.Event.addListener(marker, "click", function(e) {
-                    infowindow.open(map, marker);
-            });
-
-            infowindow.open(map, marker);
-        });
-    };
-
     function setMarkerAndInfo(e){
         var marker = new naver.maps.Marker({
             position: e.coord,
@@ -126,18 +100,51 @@ function map() {
 
         markerList.push(marker);
 
-        // var coordHtml = 'Point: ' + e.point + '<br />';
-        //
-        // menuLayer.show().css({
-        //     left: e.offset.x-22,
-        //     top: e.offset.y-90,
-        //     borderRadius:20
-        // }).html(coordHtml);
+        var coordHtml = 'Point: ' + readlist[0].txt_cn + '<br />';
 
-        console.log('Coord: ' + e.coord.toString());
+        menuLayer.show().css({
+            left: e.offset.x-22,
+            top: e.offset.y-90,
+            borderRadius:20
+        }).html(coordHtml);
     };
 }
+function setData(List){
+    List.forEach(function (item){
 
+        let itTitle = item.test_nm;
+        //let itTxt = item.txt_cn;
+        let itLocation = new naver.maps.LatLng(item.txt_loc_lat, item.txt_loc_lng);
+
+        var marker = new naver.maps.Marker({
+            map: map,
+            position: itLocation
+        });
+
+        var infowindow = new naver.maps.InfoWindow({
+            maxWidth: 500,
+            backgroundColor: "#eee",
+            borderColor: "#2db400",
+            borderWidth: 5,
+            anchorSize: new naver.maps.Size(30, 30),
+            anchorSkew: true,
+            anchorColor: "#eee",
+            pixelOffset: new naver.maps.Point(20, -20)
+        });
+
+        infowindow.setContent([
+            '<div class="iw_inner">',
+            '   <h3>여기에 test_nm</h3>',
+            '</div>'
+        ].join(''));
+
+        naver.maps.Event.addListener(marker, "click", function(e) {
+            infowindow.open(map, marker);
+        });
+
+        //infowindow.open(map, marker);
+    });
+};
 function searchCoordinateToAddress(latlng) {
 
     infoWindow.close();
@@ -154,7 +161,7 @@ function searchCoordinateToAddress(latlng) {
         }
 
         var items = response.v2.results,
-            address = '',
+
             htmlAddresses = [];
 
         for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
@@ -171,38 +178,57 @@ function searchCoordinateToAddress(latlng) {
             htmlAddresses.join('<br />'),
             '</div>'
         ].join('\n'));
-
         infoWindow.open(map, latlng);
-        getData();
 
-        function getData() {
-            $.ajax({
-                method: "GET",
-                url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString() + "&radius=20000",
-                data: {query: address},
-                headers: {Authorization: "KakaoAK 00b285e6c72f581d9c2f16bb7c585100"}
-            })
-                .done(function (msg) {
-                    console.log(msg);
-                    try {
-                        $("#latiVal").val(msg.documents[0].x);
-                        $("#longiVal").val(msg.documents[0].y);
-                        $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
-                        $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
-                        $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
-                        $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
-                        $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
+        getData(address);
 
-                    } catch (error) {
-                        $("#locationTitle").html(" <strong>*정보 없음*</strong>");
-                        $("#category_name").html("<li>" + "" + "</li>");
-                        $("#place_url").html("<li>" + "" + "</li>");
-                        $("#phone").html("<li>" + "" + "</li>");
-                        $("#distance").html("<li>" + "" + "</li>");
-                    }
-                });
-        }
+
     });
+}
+
+function getData(target){
+    $.ajax({
+        method: "GET",
+        // url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString(),
+        url: "https://dapi.kakao.com/v2/local/search/keyword.json",
+        data: {query: target},
+        headers: {Authorization: "KakaoAK 00b285e6c72f581d9c2f16bb7c585100"}
+    })
+        .done(function (msg) {
+            for (var i=0, ii=SearchMarkerList.length; i<ii; i++) {
+                SearchMarkerList[i].setMap(null);
+            }
+            SearchMarkerList = [];
+
+            console.log(msg);
+            try {
+                msg.documents.forEach(function (item){
+                    let itLocation = new naver.maps.LatLng(item.x, item.y);
+                    var marker = new naver.maps.Marker({
+                        map: map,
+                        position: new naver.maps.LatLng(item.y, item.x)
+                    });
+
+                    SearchMarkerList.push(marker);
+                });
+
+                // 인포창 표시
+                $("#latiVal").val(msg.documents[0].x);
+                $("#longiVal").val(msg.documents[0].y);
+                $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
+                $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
+                $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
+                $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
+                $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
+
+            } catch (error) {
+                $("#locationTitle").html(" <strong>*정보 없음*</strong>");
+                $("#category_name").html("<li>" + "" + "</li>");
+                $("#place_url").html("<li>" + "" + "</li>");
+                $("#phone").html("<li>" + "" + "</li>");
+                $("#distance").html("<li>" + "" + "</li>");
+            }
+        });
 }
 
 function makeAddress(item) {
@@ -291,9 +317,7 @@ function success(pos) {
     lati = crd.latitude;
     longi = crd.longitude;
 
-    //alert(crd.latitude+","+crd.longitude);
-
-    map();
+    setMap();
 };
 
 function error(err) {

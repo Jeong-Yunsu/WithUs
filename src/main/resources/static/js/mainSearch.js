@@ -9,6 +9,7 @@ document.querySelectorAll('.accordion .accordion_item > button').forEach((btn) =
 // 검색창
 $(document).ready(function(){
 
+    //var cast;
     var address = new Vue({
         el : '#address',
         data : {
@@ -25,6 +26,9 @@ $(document).ready(function(){
                     alert("검색어를 입력하세요");
                     return;
                 }
+
+                //localStorage.setItem('txt',searchTxt);
+
                 // 인증키
                 var config = { headers: {Authorization : 'KakaoAK 00b285e6c72f581d9c2f16bb7c585100'}};
                 // url 및 키워드 담아 보냄 - 주소를 가져옴
@@ -60,7 +64,33 @@ $(document).ready(function(){
                 })
             },
             move : function(x,y){
-                // 아직 작성하지 않음. 에러 안뜨게 함수만 생성
+                let itLocation = new naver.maps.LatLng(x, y);
+
+                var marker = new naver.maps.Marker({
+                    map: map,
+                    position: itLocation
+                });
+
+                var infowindow = new naver.maps.InfoWindow({
+                    maxWidth: 500,
+                    backgroundColor: "#eee",
+                    borderColor: "#2db400",
+                    borderWidth: 5,
+                    anchorSize: new naver.maps.Size(30, 30),
+                    anchorSkew: true,
+                    anchorColor: "#eee",
+                    pixelOffset: new naver.maps.Point(20, -20)
+                });
+
+                infowindow.setContent([
+                    '<div class="iw_inner">',
+                    '   <h3>'+this.keyword+'</h3>',
+                    '</div>'
+                ].join(''));
+
+
+                    infowindow.open(map, marker);
+
             }
         }
     });

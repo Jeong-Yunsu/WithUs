@@ -16,7 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <%--        <script type="text/javascript" src="<c:url value='/js/mainSearch.js' />"></script>--%>
 
     <link rel="stylesheet" type="text/css" href="../css/mainMap.css" />
     <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
@@ -26,14 +25,11 @@
     <script src="/js/mainSidebar.js" defer></script>
     <script src="/js/mainSub.js" defer></script>
     <script src="/js/mainSearch.js" defer></script>
-    <script src="../js/mainMap.js"></script>
+    <script src="../js/mainMap.js?ver1"></script>
 
     <script>
         $(document).ready(function(){
-            // 글 작성하기 부분
-            $("#test-button").click(function(){
-                //$("p").hide();asdf
-            });
+            localStorage.clear();
         });
     </script>
 </head>
@@ -68,8 +64,8 @@
     <div class="area">
         <div id="address">
             <div class="search">
-                <input type="search" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
-                <input type="button" @click='searchAddress()' class="search_btn" value="검색">
+                <input type="search" id = "searchInput" name="searchInput" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
+                <input type="submit" id = "myKeywordSearch" name="myKeywordSearch" @click='searchAddress()' onclick='myFunction()'  class="search_btn" value="검색">
             </div>
             <div>
                 <div style="width: 300px;height: 100%;border: 1px solid black; background: white">
@@ -100,18 +96,6 @@
             <input id="btn5" type="submit" value="전송">
         </form>
     </nav>
-
-    <!--지도 정보-->
-    <%--            <nav id="sub">--%>
-    <%--                <div id = locationTitle></div>--%>
-    <%--                <ul>--%>
-    <%--                    <li id =category_name></li>--%>
-    <%--                    <li id =place_url></li>--%>
-    <%--                    <li id =phone></li>--%>
-    <%--                    <li id =distance></li>--%>
-    <%--                </ul>--%>
-    <%--                <button type="button" id="writeBtn">글 작성하기</button>--%>
-    <%--            </nav>--%>
 
     <!--스토리-->
     <%--            <nav class="test-story">--%>
