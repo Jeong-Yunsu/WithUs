@@ -29,7 +29,9 @@
 
     <script>
         $(document).ready(function(){
-            localStorage.clear();
+            $("#myKeywordSearch").on("click", function(e) {
+                e.preventDefault();
+            });
         });
     </script>
 </head>

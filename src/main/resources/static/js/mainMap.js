@@ -24,9 +24,8 @@ $(document).ready(function(){
 function myFunction() {
     // var x = document.getElementById("myInput");
     // document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
-
+    // event.preventDefault();
     getData($("#searchInput").val());
-
 }
 
 function setMap() {
@@ -34,8 +33,9 @@ function setMap() {
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
             center: new naver.maps.LatLng(lati, longi), // 지도의 중심좌표
-            zoom: 10, // 지도의 확대 레벨
-            mapTypeControl: true
+            zoom: 16, // 지도의 확대 레벨
+            mapTypeControl: true,
+
         };
 
     // 지도를 생성합니다
@@ -65,8 +65,7 @@ function setMap() {
     // 마우스 클릭이벤트
     map.addListener('click', function(e) {
         searchCoordinateToAddress(e.coord);
-        setMarkerAndInfo(e);
-        //isClick = true;
+        // setMarkerAndInfo(e);
     });
 
     // naver.maps.Event.addListener(map, 'keydown', function(e) {
@@ -85,22 +84,22 @@ function setMap() {
         menuLayer.hide();
     });
 
-    function setMarkerAndInfo(e){
-        var coordHtml = 'Point: ' + readlist[0].txt_cn + '<br />';
-
-        menuLayer.show().css({
-            left: e.offset.x-22,
-            top: e.offset.y-90,
-            borderRadius:20
-        }).html(coordHtml);
-    };
+    // function setMarkerAndInfo(e){
+    //     var coordHtml = 'Point: ' + readlist[0].txt_cn + '<br />';
+    //
+    //     menuLayer.show().css({
+    //         left: e.offset.x-22,
+    //         top: e.offset.y-90,
+    //         borderRadius:20
+    //     }).html(coordHtml);
+    // };
 }
 function setData(List){
     List.forEach(function (item){
 
         let itTitle = item.test_nm;
         //let itTxt = item.txt_cn;
-        let itLocation = new naver.maps.LatLng(item.txt_loc_lat, item.txt_loc_lng);
+        let itLocation = new naver.maps.LatLng(item.txt_loc_lng,item.txt_loc_lat);
 
         var marker = new naver.maps.Marker({
             map: map,
@@ -189,7 +188,6 @@ function getData(target){
             console.log(msg);
             try {
                 msg.documents.forEach(function (item){
-                    let itLocation = new naver.maps.LatLng(item.x, item.y);
                     var marker = new naver.maps.Marker({
                         map: map,
                         position: new naver.maps.LatLng(item.y, item.x)
@@ -199,13 +197,18 @@ function getData(target){
                 });
 
                 // 인포창 표시
-                $("#latiVal").val(msg.documents[0].x);
-                $("#longiVal").val(msg.documents[0].y);
+                $("#latiVal").val(msg.documents[0].y);
+                $("#longiVal").val(msg.documents[0].x);
                 $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
                 $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
                 $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
                 $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
                 $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
+
+                // 화면크키에서 벗어난 장소일 때만 이동됨
+                var moveLatLon = new naver.maps.LatLng(msg.documents[0].y, msg.documents[0].x);
+                map.panTo(moveLatLon);
+                map.setZoom(16);
 
             } catch (error) {
                 $("#locationTitle").html(" <strong>*정보 없음*</strong>");
