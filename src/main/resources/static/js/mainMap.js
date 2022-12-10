@@ -2,7 +2,6 @@ var map;
 var lati,longi;
 var infoWindow;
 var SearchMarkerList=[];
-var markerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
 var readlist=[
@@ -70,36 +69,23 @@ function setMap() {
         //isClick = true;
     });
 
-    naver.maps.Event.addListener(map, 'keydown', function(e) {
-        var keyboardEvent = e.keyboardEvent,
-            keyCode = keyboardEvent.keyCode || keyboardEvent.which;
-
-        var ESC = 27;
-
-        if (keyCode === ESC) {
-            keyboardEvent.preventDefault();
-
-            for (var i=0, ii=markerList.length; i<ii; i++) {
-                markerList[i].setMap(null);
-            }
-
-            markerList = [];
-            menuLayer.hide();
-        }
-    });
+    // naver.maps.Event.addListener(map, 'keydown', function(e) {
+    //     var keyboardEvent = e.keyboardEvent,
+    //         keyCode = keyboardEvent.keyCode || keyboardEvent.which;
+    //
+    //     var ESC = 27;
+    //
+    //     if (keyCode === ESC) {
+    //         keyboardEvent.preventDefault();
+    //         menuLayer.hide();
+    //     }
+    // });
 
     naver.maps.Event.addListener(map, 'mousedown', function(e) {
         menuLayer.hide();
     });
 
     function setMarkerAndInfo(e){
-        var marker = new naver.maps.Marker({
-            position: e.coord,
-            map: map
-        });
-
-        markerList.push(marker);
-
         var coordHtml = 'Point: ' + readlist[0].txt_cn + '<br />';
 
         menuLayer.show().css({
@@ -134,7 +120,7 @@ function setData(List){
 
         infowindow.setContent([
             '<div class="iw_inner">',
-            '   <h3>여기에 test_nm</h3>',
+            '   <h3>'+item.txt_nm+' </h3>',
             '</div>'
         ].join(''));
 
