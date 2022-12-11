@@ -86,8 +86,8 @@
     <!--지도 정보-->
     <nav id="sub">
         <form id="send" action="sendLocation" method="GET">
-            <p><input type="String" name="latiVal" id="latiVal" value="latitude"></p>
-            <p><input type="String" name="longiVal" id="longiVal" value="longitude"></p>
+            <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
+            <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
             <div id = locationTitle></div>
             <ul>
                 <li id =category_name></li>
@@ -95,18 +95,18 @@
                 <li id =phone></li>
                 <li id =distance></li>
             </ul>
-            <input id="btn5" type="submit" value="전송">
+            <input id="btn5" type="submit" value="게시물 작성하기">
         </form>
         <form id="infoForm" action="sendLocation" method="GET">
-            <p><input type="String" name="latiVal2" id="latiVal2" value="lati"></p>
-            <p><input type="String" name="longiVal2" id="longiVal2" value="longi"></p></br>
+            <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>
+            <p><input type="hidden" name="longiVal2" id="longiVal2" value="longi"></p></br>
+          <div id = txtPic></div> <%--  <img src="/images/stickman.gif" alt="Stickman" width="24" height="39">--%>
             <div id = txtTitle style="font-size: 20px"></div>
             <div id="myTxt" style="background-color: #FFFFFF;border-radius: 10px;">
                 <div id = txtContent style="font-size: 15px"></div></br>
                 <div id = txtDate style="float: right" ></div>
             </div>
-<%--            <input id="modifyBtn" type="submit" value="수정하기">--%>
-<%--            <input id="deleteBtn" type="submit" value="삭제하기">--%>
+            <input id="modifyBtn" type="submit" value="수정하기">
         </form>
     </nav>
 

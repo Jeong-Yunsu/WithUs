@@ -19,6 +19,9 @@ $(document).ready(function(){
     //alert(crd.latitude+","+crd.longitude);
 
     // console.log("data: "+readlist);
+
+    // 처음 접속했을때 오른쪽 네비바에 스토리 추가?
+    $("#send").hide();
     $("#infoForm").hide();
 
 });
@@ -121,41 +124,49 @@ function setData(List){
                 ].join('')
             }
         });
+        // 게시글 정보창 띄우기
+//         var infowindow = new naver.maps.InfoWindow({
+//             maxWidth: 500,
+//             backgroundColor: "#eee",
+//             borderColor: "#FFFFFF",
+//             borderWidth: 5,
+//             anchorSize: new naver.maps.Size(30, 30),
+//             anchorSkew: true,
+//             anchorColor: "#eee",
+//             pixelOffset: new naver.maps.Point(0, -10)
+//         });
+//
+//
+        // infowindow.setContent([
+        //             '<div class=infoWin style="background-color: #808080">' +
+        //                 '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
+        //                  '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+        //                     '</div>'
+        //
+        //         ].join(''));
 
-        var infowindow = new naver.maps.InfoWindow({
-            maxWidth: 500,
-            backgroundColor: "#eee",
-            borderColor: "#FFFFFF",
-            borderWidth: 5,
-            anchorSize: new naver.maps.Size(30, 30),
-            anchorSkew: true,
-            anchorColor: "#eee",
-            pixelOffset: new naver.maps.Point(0, -10)
-        });
-
-        infowindow.setContent([
-                    '<div class=infoWin style="background-color: #808080">' +
-                        '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
-                         '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
-                            '</div>'
-
-                ].join(''));
-
+        // 게시글 네비바에 띄우기
         naver.maps.Event.addListener(marker, "click", function(e) {
-            // 인포창에 게시글 띄우기 추가하기
+
+            infoWindow.close();
+
+
             $("#send").hide();
             $("#infoForm").show();
+            // $("#sub").css("background-color", "yellow");
 
+            $("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
             $("#txtTitle").html(" <strong>" + item.txt_nm + "</strong>");
             $("#txtContent").html(item.txt_cn);
             $("#txtDate").html(item.txt_date);
 
-            // 클릭한 곳으로 센터&줌
+            // // 클릭한 곳으로 센터&줌
             // map.setZoom(16);
             // map.setCenter(new naver.maps.LatLng(e.latitude, e.longitude));
-            infowindow.open(map, marker);
+
+            //infowindow.open(map, marker);
         });
 
         //infowindow.open(map, marker);
@@ -205,8 +216,8 @@ function searchCoordinateToAddress(latlng) {
 function getData(target){
     $.ajax({
         method: "GET",
-        // url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString(),
-        url: "https://dapi.kakao.com/v2/local/search/keyword.json",
+        url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString(),
+        //url: "https://dapi.kakao.com/v2/local/search/keyword.json",
         data: {query: target},
         headers: {Authorization: "KakaoAK 00b285e6c72f581d9c2f16bb7c585100"}
     })
