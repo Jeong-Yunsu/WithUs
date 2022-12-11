@@ -71,7 +71,10 @@ function setMyMap() {
 
     // 마우스 클릭이벤트
     map.addListener('click', function(e) {
+
+        $("#infoForm").hide();
         $("#send").show();
+
         searchCoordinateToAddress(e.coord);
         // setMarkerAndInfo(e);
     });
@@ -142,6 +145,12 @@ function setData(List){
             // 인포창에 게시글 띄우기 추가하기
             $("#send").hide();
             $("#infoForm").show();
+
+            $("#latiVal2").val(item.txt_loc_lat);
+            $("#longiVal2").val(item.txt_loc_lng);
+            $("#txtTitle").html(" <strong>" + item.txt_nm + "</strong>");
+            $("#txtContent").html(item.txt_cn);
+            $("#txtDate").html(item.txt_date);
 
             // 클릭한 곳으로 센터&줌
             // map.setZoom(16);

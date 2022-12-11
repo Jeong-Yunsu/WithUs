@@ -97,15 +97,17 @@
             </ul>
             <input id="btn5" type="submit" value="전송">
         </form>
-<%--        <form id="infoForm" action="sendLocation" method="GET">--%>
-<%--            <p><input type="String" name="latiVal2" id="latiVal2" value="latitude"></p>--%>
-<%--            <p><input type="String" name="longiVal2" id="longiVal2" value="longitude"></p>--%>
-<%--            <div id = txtTitle></div>--%>
-<%--            <div id = txtContent></div>--%>
-<%--            <div id = txtDate></div>--%>
+        <form id="infoForm" action="sendLocation" method="GET">
+            <p><input type="String" name="latiVal2" id="latiVal2" value="lati"></p>
+            <p><input type="String" name="longiVal2" id="longiVal2" value="longi"></p></br>
+            <div id = txtTitle style="font-size: 20px"></div>
+            <div id="myTxt" style="background-color: #FFFFFF;border-radius: 10px;">
+                <div id = txtContent style="font-size: 15px"></div></br>
+                <div id = txtDate style="float: right" ></div>
+            </div>
 <%--            <input id="modifyBtn" type="submit" value="수정하기">--%>
 <%--            <input id="deleteBtn" type="submit" value="삭제하기">--%>
-<%--        </form>--%>
+        </form>
     </nav>
 
     <!--스토리-->
