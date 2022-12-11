@@ -19,7 +19,7 @@ $(document).ready(function(){
     //alert(crd.latitude+","+crd.longitude);
 
     // console.log("data: "+readlist);
-
+    $("#infoForm").hide();
 
 });
 function myFunction() {
@@ -59,15 +59,10 @@ function setMyMap() {
     });
 
     // 현재위치 인포창
-    // infoWindow = new naver.maps.InfoWindow({
-    //     anchorSkew: true
-    // });
-    // infoWindow.setContent([
-    //     '<div class="iw_inner">',
-    //     '   <h3>ME</h3>',
-    //     '</div>'
-    // ].join(''));
-    // infoWindow.open(map, marker);
+    infoWindow = new naver.maps.InfoWindow({
+        anchorSkew: true
+    });
+    //infoWindow.open(map, marker);
 
     setData(readlist); // 게시물 지도에 마커로 표시
 
@@ -76,6 +71,7 @@ function setMyMap() {
 
     // 마우스 클릭이벤트
     map.addListener('click', function(e) {
+        $("#send").show();
         searchCoordinateToAddress(e.coord);
         // setMarkerAndInfo(e);
     });
@@ -115,8 +111,8 @@ function setData(List){
             position: itLocation,
             icon:{
                 content:['<div class=infoWin style="background-color:#FF9F9F">' +
-                    '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
-                    '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+                    '<div style ="font-weight: bold;font-size:18px">'+item.txt_nm+'</div>'+ // 제목
+                    '<div style ="font-weight: normal;font-size:14px">'+item.txt_date+'</div>'+
                     '</div>'
 
                 ].join('')
@@ -144,12 +140,8 @@ function setData(List){
 
         naver.maps.Event.addListener(marker, "click", function(e) {
             // 인포창에 게시글 띄우기 추가하기
-
-            // $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
-            // $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
-            // $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
-            // $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
-            // $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
+            $("#send").hide();
+            $("#infoForm").show();
 
             // 클릭한 곳으로 센터&줌
             // map.setZoom(16);
@@ -188,7 +180,7 @@ function searchCoordinateToAddress(latlng) {
         }
 
         infoWindow.setContent([
-            '<div id=infoWin style="background-color:#FF9F9F" >',
+            '<div class=infoWin style="background-color:#808080" >',
             '<h4 style="margin-top:5px;">검색 좌표</h4>',
             htmlAddresses.join('<br />'),
             '</div>'

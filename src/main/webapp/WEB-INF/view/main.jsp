@@ -85,7 +85,7 @@
 
     <!--지도 정보-->
     <nav id="sub">
-        <form action="sendLocation" method="GET">
+        <form id="send" action="sendLocation" method="GET">
             <p><input type="String" name="latiVal" id="latiVal" value="latitude"></p>
             <p><input type="String" name="longiVal" id="longiVal" value="longitude"></p>
             <div id = locationTitle></div>
@@ -97,6 +97,15 @@
             </ul>
             <input id="btn5" type="submit" value="전송">
         </form>
+<%--        <form id="infoForm" action="sendLocation" method="GET">--%>
+<%--            <p><input type="String" name="latiVal2" id="latiVal2" value="latitude"></p>--%>
+<%--            <p><input type="String" name="longiVal2" id="longiVal2" value="longitude"></p>--%>
+<%--            <div id = txtTitle></div>--%>
+<%--            <div id = txtContent></div>--%>
+<%--            <div id = txtDate></div>--%>
+<%--            <input id="modifyBtn" type="submit" value="수정하기">--%>
+<%--            <input id="deleteBtn" type="submit" value="삭제하기">--%>
+<%--        </form>--%>
     </nav>
 
     <!--스토리-->
