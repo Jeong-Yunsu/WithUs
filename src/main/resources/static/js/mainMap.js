@@ -1,3 +1,4 @@
+var HOME_PATH = window.HOME_PATH || '.';
 var map;
 var lati,longi;
 var infoWindow;
@@ -33,7 +34,7 @@ function setMyMap() {
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
             center: new naver.maps.LatLng(lati, longi), // 지도의 중심좌표
-            zoom: 13, // 지도의 확대 레벨
+            zoom: 15, // 지도의 확대 레벨
             mapTypeControl: true,
 
         };
@@ -44,18 +45,38 @@ function setMyMap() {
     // 내 위치에 마커 띄우기
     var marker = new naver.maps.Marker({
         position: new naver.maps.LatLng(lati, longi),
-        map: map
+        map: map,
+        // icon:{
+        //     content: '<img src="resources/img/me.png"   width="100" height="50" alt="이미지" onerror="this.style.display=\'none\'" />',
+        // }
+        icon:{
+            content:['<div style="padding-top:5px;' +
+            'padding-bottom:5px;' +
+            'padding-left:5px;'+
+            'padding-right:5px;' +
+            'background-color:#005cbf;' +
+            'color:white;' +
+            'text-align:center;' +
+            'border:1px solid #a09b07;' +
+            'border-radius:14px;' +
+            'opacity:65%">' +
+            '<div style ="font-weight: bold;font-size:17px;color: #FFFFFF">현재 위치</div>'+
+            '</div>'
+
+            ].join('')
+        }
     });
 
-    infoWindow = new naver.maps.InfoWindow({
-        anchorSkew: true
-    });
-    infoWindow.setContent([
-        '<div class="iw_inner">',
-        '   <h3>ME</h3>',
-        '</div>'
-    ].join(''));
-    infoWindow.open(map, marker);
+    // 현재위치 인포창
+    // infoWindow = new naver.maps.InfoWindow({
+    //     anchorSkew: true
+    // });
+    // infoWindow.setContent([
+    //     '<div class="iw_inner">',
+    //     '   <h3>ME</h3>',
+    //     '</div>'
+    // ].join(''));
+    // infoWindow.open(map, marker);
 
     setData(readlist); // 게시물 지도에 마커로 표시
 
@@ -97,34 +118,67 @@ function setMyMap() {
 function setData(List){
 
     List.forEach(function (item){
-
-        let itTitle = item.test_nm;
-        //let itTxt = item.txt_cn;
         let itLocation = new naver.maps.LatLng(item.txt_loc_lat,item.txt_loc_lng);
-
         var marker = new naver.maps.Marker({
             map: map,
-            position: itLocation
+            position: itLocation,
+            icon:{
+                content:['<div style="padding-top:5px;' +
+                    'padding-bottom:5px;' +
+                    'padding-left:5px;'+
+                    'padding-right:5px;' +
+                    'background-color:#FF9F9F;' +
+                    'color:white;' +
+                    'text-align:center;' +
+                    'border:1px solid #a09b07;' +
+                    'border-radius:14px;' +
+                    'opacity:75%">' +
+                    '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
+                    '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+                    '</div>'
+
+                ].join('')
+            }
         });
 
         var infowindow = new naver.maps.InfoWindow({
             maxWidth: 500,
             backgroundColor: "#eee",
-            borderColor: "#2db400",
+            borderColor: "#FFFFFF",
             borderWidth: 5,
             anchorSize: new naver.maps.Size(30, 30),
             anchorSkew: true,
             anchorColor: "#eee",
-            pixelOffset: new naver.maps.Point(20, -20)
+            pixelOffset: new naver.maps.Point(0, -10)
         });
 
         infowindow.setContent([
-            '<div class="iw_inner">',
-            '   <h3>'+item.txt_nm+' </h3>',
-            '</div>'
-        ].join(''));
+                        '<div style="padding-top:5px;' +
+                        'padding-bottom:5px;' +
+                        'padding-left:5px;'+
+                        'padding-right:5px;' +
+                        'background-color:#FF9F9F;' +
+                        'color:white;' +
+                        'text-align:center;' +
+                        'border:1px solid #a09b07;' +
+                        'border-radius:14px;' +
+                        'opacity:75%">' +
+                        '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
+                         '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+                            '</div>'
+
+                ].join(''));
 
         naver.maps.Event.addListener(marker, "click", function(e) {
+            // 인포창에 게시글 띄우기 추가하기
+
+
+
+
+
+            // 클릭한 곳으로 센터&줌
+            // map.setZoom(16);
+            // map.setCenter(new naver.maps.LatLng(e.latitude, e.longitude));
             infowindow.open(map, marker);
         });
 
@@ -191,7 +245,7 @@ function getData(target){
                 msg.documents.forEach(function (item){
                     var marker = new naver.maps.Marker({
                         map: map,
-                        position: new naver.maps.LatLng(item.y, item.x) // la : y / lng : x
+                        position: new naver.maps.LatLng(item.y, item.x), // la : y / lng : x
                     });
 
                     SearchMarkerList.push(marker);
