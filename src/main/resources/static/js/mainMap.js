@@ -50,16 +50,7 @@ function setMyMap() {
         //     content: '<img src="resources/img/me.png"   width="100" height="50" alt="이미지" onerror="this.style.display=\'none\'" />',
         // }
         icon:{
-            content:['<div style="padding-top:5px;' +
-            'padding-bottom:5px;' +
-            'padding-left:5px;'+
-            'padding-right:5px;' +
-            'background-color:#005cbf;' +
-            'color:white;' +
-            'text-align:center;' +
-            'border:1px solid #a09b07;' +
-            'border-radius:14px;' +
-            'opacity:65%">' +
+            content:['<div class=infoWin style="background-color:#005cbf">' +
             '<div style ="font-weight: bold;font-size:17px;color: #FFFFFF">현재 위치</div>'+
             '</div>'
 
@@ -123,16 +114,7 @@ function setData(List){
             map: map,
             position: itLocation,
             icon:{
-                content:['<div style="padding-top:5px;' +
-                    'padding-bottom:5px;' +
-                    'padding-left:5px;'+
-                    'padding-right:5px;' +
-                    'background-color:#FF9F9F;' +
-                    'color:white;' +
-                    'text-align:center;' +
-                    'border:1px solid #a09b07;' +
-                    'border-radius:14px;' +
-                    'opacity:75%">' +
+                content:['<div class=infoWin style="background-color:#FF9F9F">' +
                     '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
                     '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
                     '</div>'
@@ -153,16 +135,7 @@ function setData(List){
         });
 
         infowindow.setContent([
-                        '<div style="padding-top:5px;' +
-                        'padding-bottom:5px;' +
-                        'padding-left:5px;'+
-                        'padding-right:5px;' +
-                        'background-color:#FF9F9F;' +
-                        'color:white;' +
-                        'text-align:center;' +
-                        'border:1px solid #a09b07;' +
-                        'border-radius:14px;' +
-                        'opacity:75%">' +
+                    '<div class=infoWin style="background-color: #808080">' +
                         '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
                          '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
                             '</div>'
@@ -172,9 +145,11 @@ function setData(List){
         naver.maps.Event.addListener(marker, "click", function(e) {
             // 인포창에 게시글 띄우기 추가하기
 
-
-
-
+            // $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
+            // $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
+            // $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
+            // $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
+            // $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
 
             // 클릭한 곳으로 센터&줌
             // map.setZoom(16);
@@ -213,8 +188,8 @@ function searchCoordinateToAddress(latlng) {
         }
 
         infoWindow.setContent([
-            '<div style="padding:10px;min-width:200px;line-height:150%;">',
-            '<h4 style="margin-top:5px;">검색 좌표</h4><br />',
+            '<div id=infoWin style="background-color:#FF9F9F" >',
+            '<h4 style="margin-top:5px;">검색 좌표</h4>',
             htmlAddresses.join('<br />'),
             '</div>'
         ].join('\n'));
