@@ -25,7 +25,7 @@
     <script src="/js/mainSidebar.js" defer></script>
     <script src="/js/mainSub.js" defer></script>
     <script src="/js/mainSearch.js" defer></script>
-    <script src="../js/mainMap.js?ver1"></script>
+    <script src="../js/mainMap.js?ver0"></script>
 
     <script>
         $(document).ready(function(){
