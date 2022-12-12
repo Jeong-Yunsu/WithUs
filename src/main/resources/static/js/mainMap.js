@@ -26,7 +26,7 @@ $(document).ready(function(){
 
     $("#nowLo").click(function (){
         map.setCenter(new naver.maps.LatLng(lati, longi));
-        map.setZoom(12);
+        map.setZoom(15);
     });
 
 });
@@ -267,7 +267,7 @@ function getData(target){
                         $("#locationTitle").html(" <strong>" + item.place_name + "</strong>");
                         $("#category_name").val(item.category_name);
                         $("#place_url").val(item.place_url);
-                        $("#distance").html(item.distance);
+                        $("#distance").html("현위치로 부터 " + item.distance + "m 거리에 있습니다." );
                         $("#phone").val(item.phone);
                     });
 

@@ -115,20 +115,20 @@
         </nav>
 
 
-    <!--스토리-->
-                <nav class="test-story">
-                    <c:forEach items="${postlist}" var="p">
-                        <ul class="story-ul">
-                            <li>[제목]</li>
-                            <li>${p.txt_nm}</li>
-                            <li>[날짜]</li>
-                            <li>${p.txt_date}</li>
-                            <li>
-                                <a href="/postList">상세 보기</a>
-                            </li>
-                        </ul>
-                    </c:forEach>
-                </nav>
+<%--    <!--스토리-->--%>
+<%--                <nav class="test-story">--%>
+<%--                    <c:forEach items="${postlist}" var="p">--%>
+<%--                        <ul class="story-ul">--%>
+<%--                            <li>[제목]</li>--%>
+<%--                            <li>${p.txt_nm}</li>--%>
+<%--                            <li>[날짜]</li>--%>
+<%--                            <li>${p.txt_date}</li>--%>
+<%--                            <li>--%>
+<%--                                <a href="/postList">상세 보기</a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </c:forEach>--%>
+<%--                </nav>--%>
 </div>
 </body>
 </html>
