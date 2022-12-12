@@ -47,7 +47,6 @@ public class MainController {
         Integer mbr_sn = (Integer) session.getAttribute("userSn");
         Map<String, Object> result = scheduleServiceImpl.getsclist(mbr_sn);
         model.addAttribute("sclist", result.get("sclist"));
-
         return "date";
     }
 
@@ -67,8 +66,6 @@ public class MainController {
 
         //System.out.println(postList);
         System.out.println(result);
-
         return "main";
     }
-
 }

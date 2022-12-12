@@ -28,17 +28,13 @@ public class PostController {
     public String toPost(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
         UserVo userVo = userServiceImpl.getUserBySn(sn);
-        model.addAttribute("user",userVo);//회원가입 페이지
+        model.addAttribute("user",userVo);
         return "post";
     }
 
     @PostMapping("/post")
     public String postUpload(PostVo postVo, HttpSession session, Model model) {
         try {
-
-//            Integer sn = (Integer) session.getAttribute("userSn");
-//            UserVo userVo = userServiceImpl.getUserBySn(sn);
-//            model.addAttribute("user",userVo);
             postServiceImpl.upload(postVo);
         } catch (DuplicateKeyException e) {
             return "redirect:/signup?error_code=-1";
