@@ -235,10 +235,40 @@ function getData(target){
 
             console.log(msg);
             try {
+
                 msg.documents.forEach(function (item){
                     var marker = new naver.maps.Marker({
                         map: map,
                         position: new naver.maps.LatLng(item.y, item.x), // la : y / lng : x
+                    });
+
+                    var infowindow = new naver.maps.InfoWindow({
+                        anchorSkew: true
+                    });
+
+                    infowindow.setContent([
+                        '<div class=infoWin style="background-color: #808080">' +
+                        '<div style ="font-weight: bold;font-size:17px">'+item.place_name+'</div>'+
+                        '</div>'
+
+                    ].join(''));
+
+                    naver.maps.Event.addListener(marker, 'mouseover', function(e) {
+                        infoWindow.close();
+                        infowindow.open(map, marker);
+                    });
+
+                    naver.maps.Event.addListener(marker, "click", function(e) {
+
+                        $("#infoForm").hide();
+                        $("#send").show();
+
+                        // 서버에서 들고오면 수정해야함------------------------------------------
+                        $("#locationTitle").html(" <strong>" + item.place_name + "</strong>");
+                        $("#category_name").val(item.category_name);
+                        $("#place_url").val(item.place_url);
+                        $("#distance").html(item.distance);
+                        $("#phone").val(item.phone);
                     });
 
                     SearchMarkerList.push(marker);
@@ -267,7 +297,6 @@ function getData(target){
             }
         });
 }
-
 function makeAddress(item) {
     if (!item) {
         return;
