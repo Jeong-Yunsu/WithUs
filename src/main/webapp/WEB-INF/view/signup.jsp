@@ -29,7 +29,7 @@
         }
         body {
             min-height: 100vh;
-            background: #FCDDB0;
+            background: #eaeaea;
             /*background: -webkit-gradient(linear, left bottom, right top, from(#FF9F9F), to(#FFFAD7));*/
             /*background: -webkit-linear-gradient(bottom left, #FF9F9F 0%, #FFFAD7 100%);*/
             /*background: -moz-linear-gradient(bottom left, #FF9F9F 0%, #FFFAD7 100%);*/

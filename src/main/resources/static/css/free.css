@@ -10,11 +10,11 @@ textarea:focus,input:focus{border-color:transparent!important}
 button{outline:none!important;border:none;background:0 0}
 button:hover{cursor:pointer}iframe{border:none!important}
 .limiter{width:100%;margin:0 auto}
-.container-table100{width:100%;min-height:100vh;background:#c4d3f6;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
+.container-table100{width:100%;min-height:100vh;background: #eaeaea;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
 .wrap-table100{width:960px;border-radius:10px;overflow:hidden}
 .table{width:100%;display:table;margin:0}@media screen and (max-width:768px){
     .table{display:block}}.row{display:table-row;background:#fff}
-.row.header{color:#fff;background:#6c7ae0}@media screen and (max-width:768px){
+.row.header{color:#fff;background:#E97777}@media screen and (max-width:768px){
     .row{display:block}.row.header{padding:0;height:0}
     .row.header .cell{display:none}
     .row .cell:before{font-family:Poppins-Bold;
@@ -43,6 +43,7 @@ button:hover{cursor:pointer}iframe{border:none!important}
     color:#fff;
     line-height:1.2;
     font-weight:unset!important;
+
     padding-top:19px;
     padding-bottom:19px}
 .row .cell:nth-child(1){width:110px;padding-left:40px}
@@ -50,7 +51,8 @@ button:hover{cursor:pointer}iframe{border:none!important}
 .row .cell:nth-child(3){width:200px}
 .row .cell:nth-child(4){width:290px}
 .table,.row{width:100%!important}
-.row:hover{background-color:#ececff;cursor:pointer}
+.row:hover{background-color: #f1f1f1;cursor:pointer}
+.row.header:hover{background-color: #E97777;cursor:pointer}
 @media(max-width:768px){
     .row{border-bottom:1px solid #f2f2f2;
         padding-bottom:18px;

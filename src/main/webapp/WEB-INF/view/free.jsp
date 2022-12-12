@@ -36,20 +36,14 @@
                                     작성일
                                 </div>
                             </div>
-                                <c:forEach var="list" items="${freelist}" varStatus="listvoStatus">
-                                    <div class="row" id="list" >
-                                        <div class="cell" data-title="Full Name">
-                                            ${listvoStatus.index + 1}
-                                        </div>
-                                        <div class="cell" data-title="Age">
-                                        <a href="/free/${list.ntc_sn}" datatype="">${list.ntc_ttl}</a>
-                                        </div>
-                                        <div class="cell" data-title="Age">
-                                            <a href="/free/${list.ntc_sn}" datatype="">${list.rgtr_dt}</a>
-                                        </div>
-                                        <input type="hidden"${list.ntc_cn}>
-                                    </div>
-                                </c:forEach>
+                            <c:forEach var="list" items="${freelist}" varStatus="listvoStatus">
+                                <div class="row" id="list" onclick="location.href='/free/${list.ntc_sn}'">
+                                    <div class="cell" data-title="Full Name">${listvoStatus.index + 1}</div>
+                                    <div class="cell" data-title="Age">${list.ntc_ttl}</div>
+                                    <div class="cell" data-title="Age">${list.rgtr_dt}</div>
+                                    <input type="hidden"${list.ntc_cn}>
+                                </div>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>

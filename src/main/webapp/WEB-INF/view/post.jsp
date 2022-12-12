@@ -21,7 +21,7 @@
 <style>
     body {
         min-height: 100vh;
-        background: #ffd6d6;
+        background: #eaeaea;
 
     }
     .input-form {

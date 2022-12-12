@@ -14,7 +14,7 @@
 <style>
     body {
         min-height: 100vh;
-        background: #FCDDB0;
+        background: #eaeaea;
     }
     .input-form {
         max-width: 800px;
