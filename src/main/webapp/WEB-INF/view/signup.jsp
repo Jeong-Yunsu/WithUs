@@ -37,7 +37,7 @@
             /*background: linear-gradient(to top right, #FF9F9F 0%, #FFFAD7 100%);*/
         }
         .input-form {
-            max-width: 680px;
+            max-width: 800px;
             margin-top: 80px;
             padding: 32px;
 
@@ -72,6 +72,7 @@
         label {
             font-weight: bold;
             display: block;
+            font-size: 20px;
         }
         [type="radio"] {
             vertical-align: middle;
@@ -106,7 +107,7 @@
 <div class="container">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
-            <h2 class="mb-3" style="font-weight: bold">회원가입</h2>
+            <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">회원가입</h1>
             <form action="/signup" method="post">
                 <div class="mb-3">
                     <label>아이디</label>
@@ -198,7 +199,7 @@
         var result = confirm("이전 페이지로 돌아가시겠습니까?");
 
         if(result) {
-            return history.go(-1);
+            return history.back();
         } else {
             return false
         }

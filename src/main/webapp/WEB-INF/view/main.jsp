@@ -55,6 +55,7 @@
             <a href="" class="link" id="btn-story">Story</a>
             <a href="/date" class="link">Calendar / D-day</a>
             <a href="" class="link">Message</a>
+            <a href="/free" class="link">자게입장</a>
             <a href="/post" class="link">Post Test</a>
             <form action="/logout" method="post">
                 <button type="submit" class="link" all="unset">로그아웃</button>
@@ -115,19 +116,19 @@
 
 
     <!--스토리-->
-    <%--            <nav class="test-story">--%>
-    <%--                <c:forEach items="${postlist}" var="p">--%>
-    <%--                    <ul class="story-ul">--%>
-    <%--                        <li>[제목]</li>--%>
-    <%--                        <li>${p.txt_nm}</li>--%>
-    <%--                        <li>[날짜]</li>--%>
-    <%--                        <li>${p.txt_date}</li>--%>
-    <%--                        <li>--%>
-    <%--                            <a href="/postList">상세 보기</a>--%>
-    <%--                        </li>--%>
-    <%--                    </ul>--%>
-    <%--                </c:forEach>--%>
-    <%--            </nav>--%>
+                <nav class="test-story">
+                    <c:forEach items="${postlist}" var="p">
+                        <ul class="story-ul">
+                            <li>[제목]</li>
+                            <li>${p.txt_nm}</li>
+                            <li>[날짜]</li>
+                            <li>${p.txt_date}</li>
+                            <li>
+                                <a href="/postList">상세 보기</a>
+                            </li>
+                        </ul>
+                    </c:forEach>
+                </nav>
 </div>
 </body>
 </html>
