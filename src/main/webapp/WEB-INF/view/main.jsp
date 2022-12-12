@@ -58,6 +58,7 @@
                     <a href="/date" class="link">Calendar / D-day</a>
                     <a href="" class="link">Message</a>
                     <a href="/post" class="link">Post Test</a>
+                    <a href="/free" class="link">자유게시판</a>
                     <form action="/logout" method="post">
                         <button type="submit" class="link" all="unset">로그아웃</button>
                     </form>

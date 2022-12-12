@@ -47,19 +47,19 @@ public class PostServiceImpl implements PostService {
 
         return result;
     }
-    @Override
-    public Map<String, Object> readmbrjosn(Integer group) {
-
-        List<PostVo> readlist = postMapper.getmbrPostList(group);
-
-        JSONArray jsonArray = JSONArray.fromObject(readlist);
-
-
-        Map<String, Object> result = new HashMap<>();
-        result.put("readmbrlist",jsonArray);
-
-        return result;
-    }
+//    @Override
+//    public Map<String, Object> readmbrjosn(Integer group) {
+//
+//        List<PostVo> readlist = postMapper.getmbrPostList(group);
+//
+//        JSONArray jsonArray = JSONArray.fromObject(readlist);
+//
+//
+//        Map<String, Object> result = new HashMap<>();
+//        result.put("readmbrlist",jsonArray);
+//
+//        return result;
+//    }
 
     @Override
     public Map<String, Object> readmbrjosn(Integer group) {
