@@ -15,19 +15,9 @@ function search(){
 
             var tempHtml = "";
             res.searchList.forEach(function(item, index) {
-                tempHtml +=
-                    "<div id=\"list\">"+
-                    "<table >" +
-                    "<div className=\"row\">"+
-                        "<div id=\"list\"className=\"cell\"data-title=\"Full Name\">" +
-
-                          "<a href=/free/" + item.ntc_sn + ">" + item.ntc_ttl + "</a>"+
-
-                        "</div>" +
-                    "</div>"+
-                    "</table>"+"</div>"
+                tempHtml += "<tr><td>" + (index+1) + "</td>" +
+                    "<td>" + "<a href=/free/" + item.ntc_sn + ">" + item.ntc_ttl + "</a>" + "</td>" + "</tr>"
             });
-
             $("#list").append(tempHtml);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown){
