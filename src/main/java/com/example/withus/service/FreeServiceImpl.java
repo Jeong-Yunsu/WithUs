@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import net.sf.json.JSONArray;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,13 +17,17 @@ public class FreeServiceImpl implements FreeService{
 
     private final FreeMapper freeMapper;
 
-
     public void insertFree(FreeVo freeVo) {
+        int mbr_sn = freeVo.getMbr_sn();
+
+        freeVo.setRgtr_id(mbr_sn);
+        freeVo.setRgtr_dt(LocalDateTime.now());
+
         freeMapper.insertFree(freeVo);
     }
 
 
-    public List<FreeVo> clickFree(Integer mbr_sn) {
+    public List<FreeVo> clickFree(int mbr_sn) {
         return  freeMapper.clickFree(mbr_sn);
     }
 

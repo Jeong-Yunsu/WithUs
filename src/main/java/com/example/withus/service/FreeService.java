@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface FreeService {
     void insertFree(FreeVo freeVo);
-    List<FreeVo> clickFree(Integer mbr_sn);
+    List<FreeVo> clickFree(int mbr_sn);
 
     List<FreeVo> getFree(String Y);
     List<FreeVo> choiceFree(FreeVo freeVo);

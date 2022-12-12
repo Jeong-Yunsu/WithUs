@@ -59,7 +59,7 @@ public class FreeController {
     }
     @GetMapping("/free/{sn}")
     public String inpost(@PathVariable String sn, HttpSession session, Model model) {
-        Integer ntcSn = Integer.parseInt(sn);
+        int ntcSn = Integer.parseInt(sn);
         //Integer mbr_sn = (Integer) session.getAttribute("userSn");
         List<FreeVo> golist = freeServiceImpl.clickFree(ntcSn);
         model.addAttribute("golist", golist);

@@ -10,17 +10,16 @@
             ntc_ttl,
             ntc_cn,
             mbr_sn,
+            rgtr_id,
             rgtr_dt
-
-
         )
         VALUES
             (
                 #{ntc_ttl},
                 #{ntc_cn},
                 #{mbr_sn},
+                #{rgtr_id},
                 #{rgtr_dt}
-
             )
     </insert>
 
