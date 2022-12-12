@@ -8,6 +8,7 @@ public class FreeVo {
     private Integer ntc_sn;
     private String ntc_ttl;
     private String ntc_cn;
+    private String mbr_sn;
     private Character top_fix;
     private String atch_file_id;
     private Character use_yn;
@@ -16,6 +17,6 @@ public class FreeVo {
     private String mdfr_id;
     private LocalDateTime mdfr_dt;
 
-    private String type;
-    private String keyword;
+    private String searchCnd = "0";
+    private String searchWrd = "";
 }

@@ -9,8 +9,9 @@
         (
             ntc_ttl,
             ntc_cn,
-            rgtr_id,
+            mbr_sn,
             rgtr_dt
+
 
         )
         VALUES
@@ -19,6 +20,7 @@
                 #{ntc_cn},
                 #{mbr_sn},
                 #{rgtr_dt}
+
             )
     </insert>
 
@@ -41,19 +43,22 @@
         SELECT *
         FROM tb_ntc
         WHERE use_yn = 'Y'
+        <if test="searchCnd==1">
+            AND  ntc_ttl LIKE CONCAT ('%', #{searchWrd},'%')
+        </if>
 
-        <choose>
-            <when test="type !=null and type.equals('ntc_ttl')">
-                AND (ntc_ttl LIKE CONCAT('%', #{keyword}, '%')
-            </when>
-            <when test="type !=null and type.equals('ntc_cn')">
-                AND ntc_cn LIKE CONCAT('%', #{keyword}, '%')
-            </when>
+        <if test="searchCnd == 2">
+            AND  ntc_cn LIKE CONCAT ('%', #{searchWrd},'%')
 
-        </choose>
+        </if>
 
-        ORDER BY rgtr_dt DESC
-
+        <if test="searchCnd == 0">
+            AND (
+            ntc_ttl LIKE CONCAT ('%', #{searchWrd},'%')
+            OR
+            ntc_cn LIKE CONCAT ('%', #{searchWrd},'%')
+            )
+        </if>
     </select>
 
 
