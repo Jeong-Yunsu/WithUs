@@ -33,13 +33,13 @@
             <div class="container-table100">
                 <div class="wrap-table100">
                     <form name="search-form" autocomplete="off">
-                        <select name="type">
+                        <select name="type" style="float: left">
                             <option selected value="">검색 내용 선택</option>
                             <option value="ntc_ttl">제목</option>
                             <option value="ntc_cn">내용</option>
                         </select>
-                        <input type="text" name="keyword" value="">
-                        <input type="button" onclick="getSearchList()" class="btn btn-outline-primary mr-2" value="검색">
+                        <input type="text" name="keyword" value="" style="float: left">
+                        <input type="button" onclick="getSearchList()" class="btn btn-outline-primary mr-2" value="검색" style="float: left">
                     </form>
 
                     <div class="table">
@@ -58,12 +58,6 @@
                             <div class="cell" data-title="Age">
                                 31
                             </div>
-
-        <%--                    <c:forEach items="${freelist}" var="u">--%>
-        <%--                        <div class="cell" data-title="Full Name">--%>
-        <%--                            <a href="/free/${u.ntc_sn}" datatype="">${u.ntc_ttl}</a>--%>
-        <%--                        </div>--%>
-        <%--                    </c:forEach>--%>
                         </div>
                     </div>
                 </div>
