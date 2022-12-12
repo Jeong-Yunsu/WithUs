@@ -6,17 +6,17 @@ var SearchMarkerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
 var readlist=[
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"ㅋㅋㅋㅋㅋ","txt_date":"2022-12-17","txt_loc_lat":"35.8727089","txt_loc_lng":"128.7085681","txt_nm":"경도위도잘들어가는거봐 ㅋㅋㅋㅋ","txt_pic":"","txt_sn":55},
-    {"gr_sn":1,"mbr_sn":86,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"dd","txt_date":"2022-12-21","txt_loc_lat":"35.7688718","txt_loc_lng":"128.7495952","txt_nm":"dd","txt_pic":"","txt_sn":56},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"asdf","txt_date":"2022-12-06","txt_loc_lat":"35.9191897","txt_loc_lng":"128.650332","txt_nm":"나다2","txt_pic":"","txt_sn":58},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"df","txt_date":"2022-11-28","txt_loc_lat":"35.8994466","txt_loc_lng":"128.6659961","txt_nm":"asd","txt_pic":"","txt_sn":59},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":null,"rgtr_id":0,"test_nm":"","txt_cn":"gdgd","txt_date":"2022-12-09","txt_loc_lat":"35.8752475","txt_loc_lng":"128.6974102","txt_nm":"안녕하세요","txt_pic":"","txt_sn":60}
+    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"ㅋㅋㅋㅋㅋ","txt_date":"2022-12-17","txt_loc_lat":"35.8727089","txt_loc_lng":"128.7085681","txt_nm":"경도위도잘들어가는거봐 ㅋㅋㅋㅋ","txt_pic":"","txt_sn":55},
+    {"gr_sn":1,"mbr_sn":86,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"dd","txt_date":"2022-12-21","txt_loc_lat":"35.7688718","txt_loc_lng":"128.7495952","txt_nm":"dd","txt_pic":"","txt_sn":56},
+    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"asdf","txt_date":"2022-12-06","txt_loc_lat":"35.9191897","txt_loc_lng":"128.650332","txt_nm":"나다2","txt_pic":"","txt_sn":58},
+    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"df","txt_date":"2022-11-28","txt_loc_lat":"35.8994466","txt_loc_lng":"128.6659961","txt_nm":"asd","txt_pic":"","txt_sn":59},
+    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"gdgd","txt_date":"2022-12-09","txt_loc_lat":"35.8752475","txt_loc_lng":"128.6974102","txt_nm":"안녕하세요","txt_pic":"","txt_sn":60}
 ];
 
 $(document).ready(function(){
 
     // 코드수정 반영 디버깅용
-    // alert(crd.latitude+","+crd.longitude);
+    //alert(crd.latitude+","+crd.longitude);
 
     // console.log("data: "+readlist);
 
@@ -117,9 +117,9 @@ function setData(List){
             position: itLocation,
             icon:{
                 content:['<div class=infoWin style="background-color:#FF9F9F">' +
-                    '<div style ="font-weight: bold;font-size:18px">'+item.txt_nm+'</div>'+ // 제목
-                    '<div style ="font-weight: normal;font-size:14px">'+item.txt_date+'</div>'+
-                    '</div>'
+                '<div style ="font-weight: bold;font-size:18px">'+item.txt_nm+'</div>'+ // 제목
+                '<div style ="font-weight: normal;font-size:14px">'+item.txt_date+'</div>'+
+                '</div>'
 
                 ].join('')
             }
@@ -343,73 +343,7 @@ var options = {
     maximumAge: 0
 };
 
-
-// $(document).ready(function(){
-//     var dataForm = $("#test");
-//     console.log(dataForm);
-//
-//
-// });
-
-
-
-
-
-// $(function (){
-//     initMap();
-// });
-//
-// function initMap(){
-//     var areaArr = new Array();
-//     areaArr.push(
-//         {location: '강남', lat : '37.4959854' , lng : '127.0664091'},
-//         {location: '중구', lat : '37.5579452' , lng : '126.9941904'}
-//     );
-//
-//     let markers = new Array();
-//     let infoWindows = new Array();
-//
-//     for (var i = 0; i < areaArr.length; i++){
-//         var marker = new naver.maps.Marker({
-//             map: map,
-//             title: areaArr[i].location,
-//             position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng)
-//         });
-//         var infoWindow = new naver.maps.InfoWindows({
-//             content: '<div style="width:200px;text-align:center;padding10px;"><b>' + areaArr[i].location + '</b><br> - 네이버지도 - </div>'
-//         });
-//         markers.push(marker);
-//         infoWindows.push(infoWindow);
-//     }
-//
-// };
-// function initMap(){
-//     var areaArr = new Array();
-//     areaArr.push($('#test'))
-//
-//     let markers = new Array();
-//     let infoWindows = new Array();
-//
-//     for (var i = 0; i < areaArr.length; i++){
-//         var marker = new naver.maps.Marker({
-//             map: map,
-//             title: areaArr[i].location,
-//             position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng)
-//         });
-//         var infoWindow = new naver.maps.InfoWindows({
-//             content: '<div style="width:200px;text-align:center;padding10px;"><b>' + areaArr[i].location + '</b><br> - 네이버지도 - </div>'
-//         });
-//         markers.push(marker);
-//         infoWindows.push(infoWindow);
-//     }
-//
-// };
-
-
 function success(pos) {
-
-
-
     crd = pos.coords;
     lati = crd.latitude;
     longi = crd.longitude;
