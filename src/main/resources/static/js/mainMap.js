@@ -16,7 +16,7 @@ var readlist=[
 $(document).ready(function(){
 
     // 코드수정 반영 디버깅용
-    //alert(crd.latitude+","+crd.longitude);
+    // alert(crd.latitude+","+crd.longitude);
 
     // console.log("data: "+readlist);
 
@@ -343,7 +343,73 @@ var options = {
     maximumAge: 0
 };
 
+
+// $(document).ready(function(){
+//     var dataForm = $("#test");
+//     console.log(dataForm);
+//
+//
+// });
+
+
+
+
+
+// $(function (){
+//     initMap();
+// });
+//
+// function initMap(){
+//     var areaArr = new Array();
+//     areaArr.push(
+//         {location: '강남', lat : '37.4959854' , lng : '127.0664091'},
+//         {location: '중구', lat : '37.5579452' , lng : '126.9941904'}
+//     );
+//
+//     let markers = new Array();
+//     let infoWindows = new Array();
+//
+//     for (var i = 0; i < areaArr.length; i++){
+//         var marker = new naver.maps.Marker({
+//             map: map,
+//             title: areaArr[i].location,
+//             position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng)
+//         });
+//         var infoWindow = new naver.maps.InfoWindows({
+//             content: '<div style="width:200px;text-align:center;padding10px;"><b>' + areaArr[i].location + '</b><br> - 네이버지도 - </div>'
+//         });
+//         markers.push(marker);
+//         infoWindows.push(infoWindow);
+//     }
+//
+// };
+// function initMap(){
+//     var areaArr = new Array();
+//     areaArr.push($('#test'))
+//
+//     let markers = new Array();
+//     let infoWindows = new Array();
+//
+//     for (var i = 0; i < areaArr.length; i++){
+//         var marker = new naver.maps.Marker({
+//             map: map,
+//             title: areaArr[i].location,
+//             position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng)
+//         });
+//         var infoWindow = new naver.maps.InfoWindows({
+//             content: '<div style="width:200px;text-align:center;padding10px;"><b>' + areaArr[i].location + '</b><br> - 네이버지도 - </div>'
+//         });
+//         markers.push(marker);
+//         infoWindows.push(infoWindow);
+//     }
+//
+// };
+
+
 function success(pos) {
+
+
+
     crd = pos.coords;
     lati = crd.latitude;
     longi = crd.longitude;

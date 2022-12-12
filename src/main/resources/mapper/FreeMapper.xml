@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.withus.mapper.FreeMapper">
+
+
+    <!-- 게시물 작성 -->
+    <insert id="insertFree" parameterType="com.example.withus.vo.FreeVo">
+        INSERT INTO tb_ntc
+        (
+            ntc_ttl,
+            ntc_cn,
+            rgtr_id,
+            rgtr_dt
+
+        )
+        VALUES
+            (
+                #{ntc_ttl},
+                #{ntc_cn},
+                #{mbr_sn},
+                #{rgtr_dt}
+            )
+    </insert>
+
+    <!-- 게시글 가져오기 -->
+    <select id="getFree" resultType="com.example.withus.vo.FreeVo">
+        SELECT *
+        FROM tb_ntc
+        WHERE use_yn = 'Y'
+    </select>
+
+    <!-- 게시글 클릭 -->
+    <select id="clickFree" resultType="com.example.withus.vo.FreeVo">
+        SELECT *
+        FROM tb_ntc
+        WHERE ntc_sn = #{ntc_sn}
+    </select>
+
+    <!-- 게시글 검색 -->
+    <select id="choiceFree" resultType="com.example.withus.vo.FreeVo">
+        SELECT *
+        FROM tb_ntc
+        WHERE use_yn = 'Y'
+
+        <choose>
+            <when test="type !=null and type.equals('ntc_ttl')">
+                AND (ntc_ttl LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="type !=null and type.equals('ntc_cn')">
+                AND ntc_cn LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+
+        </choose>
+
+        ORDER BY rgtr_dt DESC
+
+    </select>
+
+
+</mapper>

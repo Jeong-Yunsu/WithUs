@@ -14,6 +14,7 @@ public interface PostService {
     List<PostVo> getmbrPostList(Integer mbr_sn);
 
     Map<String, Object> readjosn(Integer group);
+    public Map<String, Object> readmbrjosn(Integer group);
 
     public Map<String, Object> readmbrjosn(Integer group);
 }

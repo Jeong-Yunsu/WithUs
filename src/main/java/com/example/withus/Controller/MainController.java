@@ -65,7 +65,7 @@ public class MainController {
         Map<String, Object> result = postServiceImpl.readjosn(group);
         model.addAttribute("readlist", result.get("readlist"));
 
-        //System.out.println(postList);
+        System.out.println(postList);
         System.out.println(result);
 
         return "main";
