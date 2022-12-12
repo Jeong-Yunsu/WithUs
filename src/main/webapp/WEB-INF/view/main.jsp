@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="../css/mainMap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mainMap.css?ver1" />
     <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/mainSub.css">
     <link rel="stylesheet" type="text/css" href="/css/mainSearch.css">
@@ -55,7 +55,6 @@
             <a href="" class="link" id="btn-story">Story</a>
             <a href="/date" class="link">Calendar / D-day</a>
             <a href="" class="link">Message</a>
-            <a href="/free" class="link">자유게시판</a>
             <a href="/post" class="link">Post Test</a>
             <form action="/logout" method="post">
                 <button type="submit" class="link" all="unset">로그아웃</button>
@@ -67,9 +66,11 @@
     <div class="area">
         <div id="address">
             <div class="search">
-                <input type="search" id = "searchInput" name="searchInput" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
+                <input type="search" id = "searchInput" name="searchInput" style="font-weight: bold" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
                 <input type="submit" id = "myKeywordSearch" name="myKeywordSearch" @click='searchAddress()' onclick='myFunction()'  class="search_btn" value="검색">
+
             </div>
+
             <div>
                 <div style="width: 300px;height: 100%;border: 1px solid black; background: white">
                     <div v-if="resultList.length > 0">
@@ -81,35 +82,37 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><button type="button" class="infoWin" id="nowLo" style="background-color: #005cbf">내 위치</button>
     </div>
 
     <!--지도 정보-->
-    <nav id="sub">
-        <form id="send" action="sendLocation" method="GET">
-            <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
-            <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
-            <div id = locationTitle></div>
-            <ul>
-                <li id =category_name></li>
-                <li id =place_url></li>
-                <li id =phone></li>
-                <li id =distance></li>
-            </ul>
-            <input id="btn5" type="submit" value="게시물 작성하기">
-        </form>
-        <form id="infoForm" action="sendLocation" method="GET">
-            <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>
-            <p><input type="hidden" name="longiVal2" id="longiVal2" value="longi"></p></br>
-            <div id = txtPic></div> <%--  <img src="/images/stickman.gif" alt="Stickman" width="24" height="39">--%>
-            <div id = txtTitle style="font-size: 20px"></div>
-            <div id="myTxt" style="background-color: #FFFFFF;border-radius: 10px;">
-                <div id = txtContent style="font-size: 15px"></div></br>
-                <div id = txtDate style="float: right" ></div>
-            </div>
-            <input id="modifyBtn" type="submit" value="수정하기">
-        </form>
-    </nav>
+
+        <nav id="sub">
+            <form id="send" action="sendLocation" method="GET">
+                <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
+                <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
+                <div id = locationTitle></div>
+                <ul>
+                    <li id =category_name></li>
+                    <li id =place_url></li>
+                    <li id =phone></li>
+                    <li id =distance></li>
+                </ul>
+                <input id="btn5" type="submit" value="게시물 작성하기">
+            </form>
+            <form id="infoForm" action="sendLocation" method="GET">
+                <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>
+                <p><input type="hidden" name="longiVal2" id="longiVal2" value="longi"></p></br>
+                <div id = txtPic></div> <%--  <img src="/images/stickman.gif" alt="Stickman" width="24" height="39">--%>
+                <div id = txtTitle style="font-size: 20px"></div>
+                <div id="myTxt" style="background-color: #FFFFFF;border-radius: 10px;">
+                    <div id = txtContent style="font-size: 15px"></div></br>
+                    <div id = txtDate style="float: right" ></div>
+                </div>
+                <input id="modifyBtn" type="submit" value="수정하기">
+            </form>
+        </nav>
+
 
     <!--스토리-->
     <%--            <nav class="test-story">--%>

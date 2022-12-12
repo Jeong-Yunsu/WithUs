@@ -27,13 +27,13 @@ nav{
 #rightSlideBar{
     float: right;
 }
-#select {
-    width: 400px;
-    float: left;
-    border-radius: 0% 0% 0% 0%;
-    z-index: 5;
-    height: 100%;
-}
+/*#select {*/
+/*    width: 400px;*/
+/*    float: left;*/
+/*    border-radius: 0% 0% 0% 0%;*/
+/*    !*z-index: 5;*!*/
+/*    height: 100%;*/
+/*}*/
 nav.nav-open {
     transform: translateX(-100px);
     border-radius: 0% 0% 0% 0%;
@@ -46,7 +46,7 @@ nav .menu-btn {
     padding: 0;
     width: 30px;
     cursor: pointer;
-    z-index: 2;
+    /*z-index: 2;*/
 }
 nav .menu-btn .line {
     padding: 0;

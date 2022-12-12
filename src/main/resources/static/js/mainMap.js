@@ -24,6 +24,10 @@ $(document).ready(function(){
     $("#send").hide();
     $("#infoForm").hide();
 
+    $("#nowLo").click(function (){
+        map.setCenter(new naver.maps.LatLng(lati, longi));
+    });
+
 });
 function myFunction() {
     // var x = document.getElementById("myInput");
@@ -155,6 +159,7 @@ function setData(List){
             $("#infoForm").show();
             // $("#sub").css("background-color", "yellow");
 
+            // 서버에서 들고오면 수정해야함------------------------------------------
             $("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
