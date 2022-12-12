@@ -7,6 +7,9 @@
     <title>with US</title>
     <link rel="stylesheet" type="text/css" href="../css/write.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script>
         $(document).ready(function(){
@@ -15,53 +18,104 @@
         });
     </script>
 </head>
+<style>
+    body {
+        min-height: 100vh;
+        background: #ffd6d6;
+
+    }
+    .input-form {
+        max-width: 800px;
+        padding: 32px;
+
+        background: #fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+    }
+    .button1 {
+        background-color:#FF9F9F;
+        color: #fff;
+        border:none;
+        border-radius:15px;
+    }
+    .button1:hover {
+        background-color:#E97777;
+        transition: 0.7s;
+    }
+    .button2 {
+        background-color: #b9b6b6;
+        color: #fff;
+        border:none;
+        border-radius:15px;
+    }
+    .button2:hover {
+        background-color:#a6a4a4;
+        transition: 0.7s;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        font-size: 20px;
+    }
+    .textbox {
+        height: 45px;
+        border: solid #cbccc9;
+        border-radius: 10px;
+    }
+    textarea {
+        height: 300px;
+        border: solid #cbccc9;
+        border-radius: 10px;
+    }
+</style>
 
 <body>
-<form method = "post" action = "/post">
-    <table  style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
-        <tr>
-            <td height=20 align= center bgcolor=#FF9F9F><font color=white></font></td>
-        </tr>
-        <tr>
-            <td bgcolor=white>
-                <table class = "table2">
-                    <tr>
-                        <td>제목</td>
-                        <td><input type = "text" name ="txt_nm" size=50 required></td>
-                    </tr>
-                    <tr>
-                        <td>날짜</td>
-                        <td><input type = date name = "txt_date" size=50 required></td>
-                    </tr>
-                    <tr>
-                        <td>사진</td>
-                        <td><input type="file" class="real-upload" accept="image/*"></td>
-                    </tr>
+<div class="container" style="margin-top: 150px">
+    <div class="input-form-backgroud row">
+        <div class="input-form col-md-12 mx-auto">
+            <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">게시물 작성하기</h1>
+            <form method = "post" action = "/post">
+                <div class="mb-3">
+                    <label>제목</label>
+                    <input type = "text" class="form-control2 textbox" name ="txt_nm" size=50 required>
+                </div>
+                <div class="mb-3">
+                    <label>날짜</label>
+                    <input type = date class="form-control2 textbox" name = "txt_date" size=50 required>
+                </div>
+                <div class="mb-3">
+                    <label>사진</label>
+                    <input type="file" class="real-upload" accept="image/*">
+                </div>
+
+                <input type = "hidden" name ="txt_loc_lat" value="${latiVal}" size=50 required>
+
+                <input type = "hidden" name ="txt_loc_lng" value="${longiVal}"  size=50 required>
+
+                <input type="hidden" name = "mbr_sn" value ="${user.mbr_sn}" required>
+
+                <div class="mb-3">
+                    <label>내용</label>
+                    <textarea type="text" name ="txt_cn" cols=85 rows=15 required></textarea>
+                </div>
+                <div>
+                    <button class="button1 btn-lg btn-block" type="submit">작성하기</button>
+                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
+                </div>
+                </td>
+                </tr>
+            </form>
 
 
-
-                    <input type = "hidden" name ="txt_loc_lat" value="${latiVal}" size=50 required>
-
-
-
-                    <input type = "hidden" name ="txt_loc_lng" value="${longiVal}"  size=50 required>
+        </div>
+    </div>
+</div>
 
 
-                    <tr>
-                        <td>내용</td>
-                        <td><textarea type="text" name ="txt_cn" cols=85 rows=15 required></textarea></td>
-                    </tr>
-                </table>
-
-                <center>
-                    <input type="hidden" name = "mbr_sn" value ="${user.mbr_sn}" required>
-                    <button type="button" onclick="delOk()">이전으로</button>
-                    <button type="submit">작성하기</button>
-                </center>
-            </td>
-        </tr>
-    </table>
-</form>
 </body>
 </html>
 
