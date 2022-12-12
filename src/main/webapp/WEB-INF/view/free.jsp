@@ -2,84 +2,90 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>User List</title>
-    <link rel="stylesheet" type="text/css" href="../css/write.css">
-    <script>
-        function getSearchList(){
-            $.ajax({
-                type: 'GET',
-                url : "/getSearchList",
-                data : $("form[name=search-form]").serialize(),
-                success : function(result){
-                    //테이블 초기화
-                    $('#boardtable > tbody').empty();
-                    if(result.length>=1){
-                        result.forEach(function(item){
-                            str='<tr>'
-                            str += "<td>"+item.ntc_ttl+"</td>";
-                            str+="<td>"+item.ntc_cn+"</td>";
-                            str+="</tr>"
-                            $('#boardtable').append(str);
-                        })
-                    }
-                }
-            })
-        }
-    </script>
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User List</title>
 
-<body>
-<form name="search-form" autocomplete="off">
-    <select name="type">
-        <option selected value="">검색 내용 선택</option>
-        <option value="ntc_ttl">제목</option>
-        <option value="ntc_cn">내용</option>
-    </select>
-    <input type="text" name="keyword" value="">
-    <input type="button" onclick="getSearchList()" class="btn btn-outline-primary mr-2" value="검색">
-</form>
+        <link rel="stylesheet" type="text/css" href="../css/write.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/free.css">
+    </head>
+
+    <body>
+<%--        <table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>--%>
+<%--            <tr>--%>
+<%--                <td height=20 align= center bgcolor=#FCDDB0><font color=white></font></td>--%>
+<%--            </tr>--%>
+<%--            <tr>--%>
+<%--                <td bgcolor=white>--%>
+<%--                    <table class = "table2" align=center>--%>
+<%--                        <c:forEach items="${freelist}" var="u">--%>
+<%--                            <a href="/free/${u.ntc_sn}" datatype="">${u.ntc_ttl}</a>--%>
+<%--                        </c:forEach>--%>
+<%--                    </table>--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+<%--        </table>--%>
 
 
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <form name="search-form" autocomplete="off">
+                        <select name="type">
+                            <option selected value="">검색 내용 선택</option>
+                            <option value="ntc_ttl">제목</option>
+                            <option value="ntc_cn">내용</option>
+                        </select>
+                        <input type="text" name="keyword" value="">
+                        <input type="button" onclick="getSearchList()" class="btn btn-outline-primary mr-2" value="검색">
+                    </form>
 
+                    <div class="table">
+                        <div class="row header">
+                            <div class="cell">
+                                번호
+                            </div>
+                            <div class="cell">
+                                제목
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell" data-title="Full Name">
+                                Vincent Williamson
+                            </div>
+                            <div class="cell" data-title="Age">
+                                31
+                            </div>
 
-<table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
-    <tr>
-        <td height=20 align= center bgcolor=#FCDDB0><font color=white></font></td>
-    </tr>
-    <tr>
-        <td bgcolor=white>
+        <%--                    <c:forEach items="${freelist}" var="u">--%>
+        <%--                        <div class="cell" data-title="Full Name">--%>
+        <%--                            <a href="/free/${u.ntc_sn}" datatype="">${u.ntc_ttl}</a>--%>
+        <%--                        </div>--%>
+        <%--                    </c:forEach>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
-            <table class = "table2" align=center>
-                <c:forEach items="${freelist}" var="u">
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-                        <a href="/free/${u.ntc_sn}" datatype="">${u.ntc_ttl}</a>
+        <script src="vendor/select2/select2.min.js"></script>
 
-                </c:forEach>
-            </table>
+        <script src="js/main.js"></script>
 
-            <center>
-                <button type="button" onclick="location.href='update'">정보 수정</button>
-                <form action="/delete" method="post">
-                    <button type="submit">회원 탈퇴</button>
-                </form>
-                <button type="button" onclick="delOk()">이전 으로</button>
-            </center>
-        </td>
-    </tr>
-</table>
-<script>
-    function delOk(){
-        var result = confirm("이전 페이지로 돌아가시겠습니까?");
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        if(result) {
-            return history.go(-1);
-        } else {
-            return false
-        }
-    }
-</script>
-</body>
+            gtag('config', 'UA-23581568-13');
+        </script>
+    </body>
 </html>
