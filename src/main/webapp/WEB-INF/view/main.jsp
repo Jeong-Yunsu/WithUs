@@ -34,6 +34,19 @@
             });
         });
     </script>
+    <style>
+        .story-label {
+            font-weight: bold;
+            display: inline-block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .story-div {
+            display: inline-block;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +65,7 @@
 
         <div class="nav-links">
             <a href="/mypage" class="link">My page</a>
-            <a href="" class="link" id="btn-story">Story</a>
+            <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >Story</button>
             <a href="/date" class="link">Calendar / D-day</a>
             <a href="" class="link">Message</a>
             <a href="/free" class="link">자게입장</a>
@@ -112,6 +125,24 @@
                 </div>
                 <input id="modifyBtn" type="submit" value="수정하기">
             </form>
+            <form id="storyForm" action="" method="GET">
+                <c:forEach items="${postlist}" var="p">
+                    <ul class="story-ul">
+<%--                        <label class="story-label">[제목]</label>--%>
+<%--                        <div class="story-div">${p.txt_nm}</div>--%>
+<%--                        <label class="story-label">[날짜]</label>--%>
+<%--                        <div class="story-div">${p.txt_date}</div>--%>
+<%--                        <label class="story-label">[내용]</label>--%>
+<%--                        <div class="story-div">${p.txt_cn}</div>--%>
+                            <label class="story-label">${p.txt_nm}</label>
+                            <div class="story-div">날짜: ${p.txt_date}</div>
+                            <div class="story-div">내용: ${p.txt_cn}</div>
+<%--                        <div>--%>
+<%--                            <a href="/postList">상세 보기</a>--%>
+<%--                        </div>--%>
+                    </ul>
+                </c:forEach>
+            </form>
         </nav>
 
 
@@ -132,4 +163,15 @@
 </div>
 </body>
 </html>
+
+<script>
+    // $('#btn-story').click(function () {
+    //     $('#storyForm').show();
+    // })
+    function storyShow() {
+        $("#send").hide();
+        $("#infoForm").hide();
+        $("#storyForm").show();
+    }
+</script>
 

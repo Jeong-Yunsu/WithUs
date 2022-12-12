@@ -23,6 +23,7 @@ $(document).ready(function(){
     // 처음 접속했을때 오른쪽 네비바에 스토리 추가?
     $("#send").hide();
     $("#infoForm").hide();
+    $("#storyForm").hide();
 
     $("#nowLo").click(function (){
         map.setCenter(new naver.maps.LatLng(lati, longi));
@@ -82,6 +83,7 @@ function setMyMap() {
 
         $("#infoForm").hide();
         $("#send").show();
+        $("#storyForm").hide();
 
         searchCoordinateToAddress(e.coord);
         // setMarkerAndInfo(e);
@@ -158,6 +160,7 @@ function setData(List){
 
             $("#send").hide();
             $("#infoForm").show();
+            $("#storyForm").hide();
             // $("#sub").css("background-color", "yellow");
 
             // 서버에서 들고오면 수정해야함------------------------------------------
@@ -262,6 +265,7 @@ function getData(target){
 
                         $("#infoForm").hide();
                         $("#send").show();
+                        $("#storyForm").hide();
 
                         // 서버에서 들고오면 수정해야함------------------------------------------
                         $("#locationTitle").html(" <strong>" + item.place_name + "</strong>");

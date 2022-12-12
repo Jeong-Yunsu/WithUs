@@ -17,7 +17,7 @@
         background: #eaeaea;
     }
     .input-form {
-        max-width: 800px;
+        max-width: 1200px;
 
         margin-top: 80px;
         padding: 32px;
@@ -64,7 +64,7 @@
 </style>
 
 <body>
-<div type="button" class="container" style="margin-top: 150px">
+<div type="button" class="container" style="margin-top: 30px">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
                 <c:forEach items="${golist}" var="u">
@@ -73,7 +73,7 @@
                         <tr>${u.ntc_cn}</tr>
                     </div>
                 </c:forEach>
-            <div style="display: inline-block">
+            <div>
                 <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">게시물 수정</button>
                 <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전 으로</button>
             </div>

@@ -45,6 +45,7 @@
                                         <input type="password" style="width: 360px" class="form-control2" name="password" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
+                                        <span style="color: red;">${message}</span>
                                         <button type="submit" style="width: 360px" class="form-control2 btn btn-primary submit px-3" >Sign In</button>
                                     </div>
                                 </form>
