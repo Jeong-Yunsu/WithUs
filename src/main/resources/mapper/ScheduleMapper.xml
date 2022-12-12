@@ -9,7 +9,7 @@
     </select>
 
     <!-- 게시물 작성 -->
-    <insert id="insertSchedule" parameterType="com.example.withus.vo.ScheduleVo">
+    <insert id="insertDate" parameterType="com.example.withus.vo.ScheduleVo">
         INSERT INTO tb_cal
         (
             cal_ttl,
@@ -27,10 +27,3 @@
             )
     </insert>
 </mapper>
-<!-- ,
-            call_ttl,
-            cal_str_dt,
-            cal_end_dt   ,
-                #{call_ttl},
-                #{cal_str_dt},
-                #{cal_end_dt}-->

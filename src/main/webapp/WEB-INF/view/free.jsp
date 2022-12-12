@@ -13,42 +13,46 @@
 
     <body>
         <input type="hidden" id="contextPath" value="<%=request.getContextPath()%>">
-        <div class="limiter">
-            <select class="W180" name="searchCnd" id="searchCnd" style="float: left">
-                <option value="0">전체</option>
-                <option value="1">제목</option>
-                <option value="2">내용</option>
-            </select>
-            <input type="text" id="searchWrd" name="searchWrd" placeholder="검색어를 입력하세요." style="float: left">
-            <button  onclick="search()">검색</button>
-            <div class="container-table100">
-                <div class="wrap-table100">
-                    <div class="table">
-                        <table>
-                            <div class="row header">
-                                <div class="cell">
-                                    번호
+            <div class="limiter">
+                <div class="container-table100">
+                    <div>
+                        <select class="W180" name="searchCnd" id="searchCnd" style="float: left">
+                            <option value="0">전체</option>
+                            <option value="1">제목</option>
+                            <option value="2">내용</option>
+                        </select>
+                        <a href="/free/post" style="float: right">글작성하기</a>
+                        <input type="text" id="searchWrd" name="searchWrd" placeholder="검색어를 입력하세요." style="float: left">
+                        <button  onclick="search()">검색</button>
+
+                    <div class="wrap-table100">
+                        <div class="table">
+                            <table>
+                                <div class="row header">
+                                    <div class="cell">
+                                        번호
+                                    </div>
+                                    <div class="cell">
+                                        제목
+                                    </div>
+                                    <div class="cell">
+                                        작성일
+                                    </div>
                                 </div>
-                                <div class="cell">
-                                    제목
-                                </div>
-                                <div class="cell">
-                                    작성일
-                                </div>
-                            </div>
-                            <c:forEach var="list" items="${freelist}" varStatus="listvoStatus">
-                                <div class="row" id="list" onclick="location.href='/free/${list.ntc_sn}'">
-                                    <div class="cell" data-title="Full Name">${listvoStatus.index + 1}</div>
-                                    <div class="cell" data-title="Age">${list.ntc_ttl}</div>
-                                    <div class="cell" data-title="Age">${list.rgtr_dt}</div>
-                                    <input type="hidden"${list.ntc_cn}>
-                                </div>
-                            </c:forEach>
-                        </table>
+                                <c:forEach var="list" items="${freelist}" varStatus="listvoStatus">
+                                    <div class="row" id="list" onclick="location.href='/free/${list.ntc_sn}'">
+                                        <div class="cell" data-title="Full Name">${listvoStatus.index + 1}</div>
+                                        <div class="cell" data-title="Age">${list.ntc_ttl}</div>
+                                        <div class="cell" data-title="Age">${list.rgtr_dt}</div>
+                                        <input type="hidden"${list.ntc_cn}>
+                                    </div>
+                                </c:forEach>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <a href="/free/post">글작성하기</a>
     </body>
 </html>

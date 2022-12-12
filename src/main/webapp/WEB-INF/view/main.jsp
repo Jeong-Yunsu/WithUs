@@ -64,12 +64,12 @@
         </div>
 
         <div class="nav-links">
-            <a href="/mypage" class="link">My page</a>
-            <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >Story</button>
-            <a href="/date" class="link">Calendar / D-day</a>
-            <a href="" class="link">Message</a>
-            <a href="/free" class="link">자게입장</a>
-            <a href="/post" class="link">Post Test</a>
+            <a href="/mypage" class="link">마이페이지</a>
+            <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >추억 모아보기</button>
+            <a href="/date" class="link">캘린더</a>
+            <a href="/chat" class="link">채팅</a>
+            <a href="/free" class="link">자유게시판</a>
+<%--            <a href="/post" class="link">Post Test</a>--%>
             <form action="/logout" method="post">
                 <button type="submit" class="link" all="unset">로그아웃</button>
             </form>

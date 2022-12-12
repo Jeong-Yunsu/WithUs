@@ -37,7 +37,7 @@ nav{
 nav.nav-open {
     transform: translateX(-100px);
     border-radius: 0% 0% 0% 0%;
-    background: #FF9F9F;
+    background: #707070;
 }
 nav .menu-btn {
     position: absolute;

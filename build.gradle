@@ -25,6 +25,7 @@ dependencies {
     implementation 'javax.servlet:jstl'
     implementation 'net.sf.json-lib:json-lib:2.4:jdk15'
     implementation 'com.google.code.gson:gson:2.10'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

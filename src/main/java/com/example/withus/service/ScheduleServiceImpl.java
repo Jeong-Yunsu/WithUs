@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import net.sf.json.JSONArray;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,10 +21,16 @@ public class ScheduleServiceImpl implements ScheduleService{
 
     }
 
-    public void insertSchedule(ScheduleVo scheduleVo){
+    public void insertDate(ScheduleVo scheduleVo){
+        String cal_ttl = scheduleVo.getCal_ttl();
+        Date cal_str_dt = scheduleVo.getCal_str_dt();
+        Date cal_end_dt = scheduleVo.getCal_end_dt();
+
+        scheduleVo.setCal_ttl(cal_ttl);
+        scheduleVo.setCal_str_dt(cal_str_dt);
+        scheduleVo.setCal_end_dt(cal_end_dt);
 
         scheduleMapper.insertSchedule(scheduleVo);
-
     }
 
     @Override

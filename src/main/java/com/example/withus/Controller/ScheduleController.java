@@ -17,33 +17,24 @@ public class ScheduleController {
 
     @Autowired
     private UserServiceImpl userServiceImpl;
-
     @Autowired
     private ScheduleServiceImpl scheduleServiceImpl;
-
 
     @GetMapping("/insertdate")
     public String inschedulePage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
         UserVo userVo = userServiceImpl.getUserBySn(sn);
-        model.addAttribute("user",userVo);//회원가입 페이지
+        model.addAttribute("user",userVo);
         return "insertdate";
     }
+
     @PostMapping("/insertdate")
     public String toinschedulePage(ScheduleVo scheduleVo) {
-
-
         try {
-            scheduleServiceImpl.insertSchedule(scheduleVo);
+            scheduleServiceImpl.insertDate(scheduleVo);
         }catch ( Exception e){
             e.printStackTrace();
         }
-
         return "redirect:/date";
-
     }
-
-
-
-
 }
