@@ -115,7 +115,7 @@
         </nav>
 
 
-<%--    <!--스토리-->--%>
+    <!--스토리-->
 <%--                <nav class="test-story">--%>
 <%--                    <c:forEach items="${postlist}" var="p">--%>
 <%--                        <ul class="story-ul">--%>

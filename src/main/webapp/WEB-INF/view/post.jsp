@@ -77,7 +77,7 @@
 <div class="container" style="margin-top: 150px">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
-            <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">게시물 작성하기</h1>
+            <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">STORY 작성하기</h1>
             <form method = "post" action = "/post">
                 <div class="mb-3">
                     <label>제목</label>

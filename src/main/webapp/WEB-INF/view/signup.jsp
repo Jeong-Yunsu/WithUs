@@ -182,7 +182,7 @@
                 </div>
                 <br>
                 <div>
-                    <button class="button1 btn-lg btn-block" type="submit">가입하기</button>
+                    <button class="button1 btn-lg btn-block" type="submit" onclick="work()">가입하기</button>
                     <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">취소</button>
                 </div>
             </form>
@@ -210,6 +210,15 @@
     function handleInputLength(el, max) {
         if(el.value.length > max) {
             el.value = el.value.substr(0, max);
+        }
+    }
+</script>
+<script>
+    function work() {
+        var result = confirm("회원가입을 진행하겠습니까?");
+
+        if (result) {
+            alert("withUs에 오신 것을 환영합니다~");
         }
     }
 </script>

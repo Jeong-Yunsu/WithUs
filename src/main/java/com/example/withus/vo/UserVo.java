@@ -28,4 +28,7 @@ public class UserVo {
 
     private int fail_cnt;
     private String lock_yn;
+
+    private String use_yn;
 }
+

@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <style>
     body {
@@ -59,11 +60,18 @@
         border-bottom: solid #cbccc9;
         font-size: 20px;
     }
+    /*.img-button {*/
+    /*    background: url( "image/bg_2.jpg" ) no-repeat;*/
+    /*    border: none;*/
+    /*    width: 110px;*/
+    /*    height: 110px;*/
+    }
+
 </style>
 
 <body>
-<div class="container" style="margin-top: 150px">
-    <button>go home</button>
+<%--<button type="button" class="img-button" onclick="location.href='main'"></button>--%>
+<div type="button" class="container" style="margin-top: 150px">
     <div class="input-form-backgroud row">
         <div class="input-form col-md-12 mx-auto">
             <c:forEach items="${list}" var="u">
@@ -96,7 +104,7 @@
                     <div>
                         <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">정보 수정</button>
                         <form action="/delete" method="post">
-                            <button class="button2 btn-lg btn-block" type="submit" onclick="work()">회원 탈퇴</button>
+                            <button class="button2 btn-lg btn-block" type="submit">회원 탈퇴</button>
                         </form>
                         <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전 으로</button>
                     </div>
