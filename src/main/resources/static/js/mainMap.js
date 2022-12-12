@@ -26,6 +26,7 @@ $(document).ready(function(){
 
     $("#nowLo").click(function (){
         map.setCenter(new naver.maps.LatLng(lati, longi));
+        map.setZoom(12);
     });
 
 });
