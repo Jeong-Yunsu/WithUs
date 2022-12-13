@@ -100,7 +100,6 @@
     </div>
 
     <!--지도 정보-->
-    <div id = "grid">
         <nav id="sub">
             <form id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
@@ -145,7 +144,6 @@
                 </c:forEach>
             </form>
         </nav>
-    </div>
 
 
     <!--스토리-->
