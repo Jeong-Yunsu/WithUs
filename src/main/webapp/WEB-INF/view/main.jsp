@@ -67,7 +67,7 @@
             <a href="/mypage" class="link">마이페이지</a>
             <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >추억 모아보기</button>
             <a href="/date" class="link">캘린더</a>
-            <a href="/chat" class="link">채팅</a>
+            <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
             <a href="/free" class="link">자유게시판</a>
 <%--            <a href="/post" class="link">Post Test</a>--%>
             <form action="/logout" method="post">
