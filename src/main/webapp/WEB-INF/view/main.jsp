@@ -100,7 +100,7 @@
     </div>
 
     <!--지도 정보-->
-
+    <div id = "grid">
         <nav id="sub">
             <form id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
@@ -125,7 +125,7 @@
                 </div>
                 <input id="modifyBtn" type="submit" value="수정하기">
             </form>
-            <form id="storyForm" action="" method="GET">
+            <form id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
                     <ul class="story-ul">
 <%--                        <label class="story-label">[제목]</label>--%>
@@ -136,6 +136,7 @@
 <%--                        <div class="story-div">${p.txt_cn}</div>--%>
                             <label class="story-label">${p.txt_nm}</label>
                             <div class="story-div">날짜: ${p.txt_date}</div>
+                            <div class="story-div">사진: </div>
                             <div class="story-div">내용: ${p.txt_cn}</div>
 <%--                        <div>--%>
 <%--                            <a href="/postList">상세 보기</a>--%>
@@ -144,6 +145,7 @@
                 </c:forEach>
             </form>
         </nav>
+    </div>
 
 
     <!--스토리-->
@@ -165,13 +167,14 @@
 </html>
 
 <script>
-    // $('#btn-story').click(function () {
-    //     $('#storyForm').show();
-    // })
     function storyShow() {
         $("#send").hide();
         $("#infoForm").hide();
         $("#storyForm").show();
+    }
+
+    function subShow() {
+
     }
 </script>
 

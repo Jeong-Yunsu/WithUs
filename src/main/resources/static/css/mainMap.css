@@ -4,7 +4,21 @@
     height: 100%;
     position: relative;
 }
+#map2 {
+    z-index: 0;
+    width: 2559px;
+    height: 100%;
+    position: relative;
+}
 #grid{
+    /*border:5px solid pink;*/
+    display: grid;
+    grid-template-columns:  100px 2fr 1fr 1px; /*오름차순으로 설정, 이순서는 html에 선언된 순서대로 적용됨100px 400px  2059px 1fr  100px 400px  2059px 0.1fr 1fr*/
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+#grid2{
     /*border:5px solid pink;*/
     display: grid;
     grid-template-columns:  100px 2fr 1fr 1px; /*오름차순으로 설정, 이순서는 html에 선언된 순서대로 적용됨100px 400px  2059px 1fr  100px 400px  2059px 0.1fr 1fr*/

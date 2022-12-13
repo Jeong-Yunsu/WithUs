@@ -171,7 +171,7 @@
                 </div>
                 <div class="mb-3">
                     <label>이메일(선택)</label>
-                    <input type="text" style="width: 48%" class="form-control2" id="user_email"><span style="height: 45px" id="middle"> @ </span><input type="text" style="width: 48%" class="form-control2" id="email_address" list="user_email_address" placeholder="ex) naver.com">
+                    <input type="text" style="width: 48%" class="form-control2" id="user_email"><span style="height: 45px" id="middle">@</span><input type="text" style="width: 48%" class="form-control2" id="email_address" list="user_email_address" placeholder="ex) naver.com">
                     <datalist class="form-control2" id="user_email_address">
                         <option value="naver.com"></option>
                         <option value="daum.com"></option>
@@ -218,7 +218,7 @@
         var result = confirm("회원가입을 진행하겠습니까?");
 
         if (result) {
-            alert("withUs에 오신 것을 환영합니다~");
+            alert("withUS에 오신 것을 환영합니다~");
         }
     }
 </script>
