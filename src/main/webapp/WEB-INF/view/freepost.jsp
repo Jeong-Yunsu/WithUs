@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label>내용</label>
-                    <textarea type = "text" nname="ntc_cn" cols=85 rows=15 required></textarea>
+                    <textarea type = "text" name="ntc_cn" cols=85 rows=15 required></textarea>
                 </div>
                 <div>
                     <input type="hidden" name = "mbr_sn" value ="${user.mbr_sn}" required>

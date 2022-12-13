@@ -39,7 +39,7 @@ h2 {
         height: 200px; } }
 .half .contents {
     background: #f6f7fc; }
-.half .contents, .half .bg {
+.half .contents, .half .bg, .start-btn {
     width: 50%; }
 @media (max-width: 1199.98px) {
     .half .contents, .half .bg {

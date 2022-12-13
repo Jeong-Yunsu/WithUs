@@ -9,6 +9,12 @@ body {
     padding: 0;
     background-color: #FFFFFF;
 }
+#leftSlideBar{
+    float: left;
+}
+#rightSlideBar{
+    float: right;
+}
 nav{
     overflow: hidden;
     position: relative;
@@ -21,33 +27,20 @@ nav{
     border-radius: 0% 0% 0% 0%;
     z-index: 1000;
 }
-#leftSlideBar{
-    float: left;
-}
-#rightSlideBar{
-    float: right;
-}
-/*#select {*/
-/*    width: 400px;*/
-/*    float: left;*/
-/*    border-radius: 0% 0% 0% 0%;*/
-/*    !*z-index: 5;*!*/
-/*    height: 100%;*/
-/*}*/
 nav.nav-open {
     transform: translateX(-100px);
     border-radius: 0% 0% 0% 0%;
-    background: #707070;
+    background: #FF9F9F;
 }
 nav .menu-btn {
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    padding: 0;
-    width: 30px;
-    cursor: pointer;
-    /*z-index: 2;*/
-}
+     position: absolute;
+     top: 10%;
+     right: 5%;
+     padding: 0;
+     width: 30px;
+     cursor: pointer;
+     z-index: 1001;
+ }
 nav .menu-btn .line {
     padding: 0;
     width: 30px;
@@ -144,4 +137,15 @@ a:hover{
 }
 button{
     all:unset;
+}
+.story-label {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.story-div {
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 5px;
 }

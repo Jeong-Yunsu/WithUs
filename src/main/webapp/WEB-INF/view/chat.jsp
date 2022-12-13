@@ -99,7 +99,7 @@
         <table class="inputTable">
             <tr>
                 <th>사용자명</th>
-                <th><input type="text" name="userName" id="userName"></th>
+                <th><input type="text" name="userName" id="userName" value="${user.mbr_nick}"></th>
                 <th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
             </tr>
         </table>

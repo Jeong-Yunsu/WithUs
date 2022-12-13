@@ -19,7 +19,7 @@
             <div class="contents order-2 order-md-1" >
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-md-7" >
+                        <div class="col-md-7">
                             <h3><strong>withUS</strong></h3>
                             <p class="mb-4">당신의 추억 어쩌고 당신의 여행 어쩌고 위드어스 소개</p>
                             <input type="button" onclick="location.href='login'" value="시작하기" class="start-btn"/>
