@@ -67,10 +67,11 @@
     </update>
 
     <!-- 탈퇴 -->
-    <delete id="deleteUser">
-        DELETE FROM tb_user
+    <update id="deleteUser" parameterType="com.example.withus.vo.UserVo">
+        UPDATE tb_user
+        FROM use_yn = 'N'
         WHERE mbr_sn = #{mbr_sn}
-    </delete>
+    </update>
 
     <!-- 아이디 중복 체크 -->
     <select id="idCheck" parameterType="String" resultType="int">

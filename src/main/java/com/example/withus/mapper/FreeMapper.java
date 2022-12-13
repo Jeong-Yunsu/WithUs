@@ -15,4 +15,7 @@ public interface FreeMapper {
 
     // 수정
     void updateTxt(FreeVo freeVo);
+
+    // 삭제
+    void deleteTxt(FreeVo freeVo);
 }

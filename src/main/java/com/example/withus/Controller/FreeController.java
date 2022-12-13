@@ -95,5 +95,12 @@ public class FreeController {
         return "redirect:/free";
     }
 
-
+    // 글 삭제
+    @PostMapping("/freedelete")
+    public String deleteTxt(HttpSession session, FreeVo freeVo) {
+        Integer ntcSn = (Integer) session.getAttribute("ntcSn");
+        freeVo.setNtc_sn(ntcSn);
+        freeServiceImpl.delTxt(freeVo);
+        return "redirect:/free";
+    }
 }

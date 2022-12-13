@@ -14,3 +14,10 @@ function delUser() {
         alert("회원이 탈퇴되었습니다.");
     }
 }
+function delTxt() {
+    var result = confirm("글을 삭제하시겠습니까?");
+
+    if (result) {
+        alert("글이 삭제되었습니다.");
+    }
+}

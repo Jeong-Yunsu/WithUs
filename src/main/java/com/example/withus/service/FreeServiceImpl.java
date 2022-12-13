@@ -37,12 +37,14 @@ public class FreeServiceImpl implements FreeService{
         return freeMapper.choiceFree(freeVo);
     }
 
+    // ntc_sn 받아오기
     @Override
     public Integer getNtcSn(Integer ntc_sn) {
         FreeVo freeVo = freeMapper.getTxtBySn(ntc_sn);
         return freeVo.getNtc_sn();
     }
 
+    // 게시물 수정
     public void modifyTxt(FreeVo freeVo) {
         String ntc_ttl = freeVo.getNtc_ttl();
         String ntc_cn = freeVo.getNtc_cn();
@@ -50,5 +52,13 @@ public class FreeServiceImpl implements FreeService{
         freeVo.setNtc_ttl(ntc_ttl);
         freeVo.setNtc_cn(ntc_cn);
         freeMapper.updateTxt(freeVo);
+    }
+
+    // 게시물 삭제
+    public void delTxt(FreeVo freeVo) {
+        Character use_yn = 'N';
+
+        freeVo.setUse_yn(use_yn);
+        freeMapper.deleteTxt(freeVo);
     }
 }

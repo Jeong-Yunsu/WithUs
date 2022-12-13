@@ -27,7 +27,8 @@
     <select id="getFree" resultType="com.example.withus.vo.FreeVo">
         SELECT A.*, B.mbr_nm
         FROM tb_ntc AS A LEFT JOIN tb_user AS B
-        ON A.use_yn = 'Y' and A.mbr_sn = B.mbr_sn
+        ON A.mbr_sn = B.mbr_sn
+        WHERE A.use_yn = 'Y'
     </select>
 
     <!-- 게시글 클릭 -->
@@ -41,7 +42,8 @@
     <select id="choiceFree" resultType="com.example.withus.vo.FreeVo">
         SELECT A.*, B.mbr_nm
         FROM tb_ntc AS A LEFT JOIN tb_user AS B
-        ON A.use_yn = 'Y' and A.mbr_sn = B.mbr_sn
+        ON A.mbr_sn = B.mbr_sn
+        WHERE A.use_yn = 'Y'
         <if test="searchCnd==1">
             AND  ntc_ttl LIKE CONCAT ('%', #{searchWrd},'%')
         </if>
@@ -71,6 +73,13 @@
         UPDATE tb_ntc
         SET ntc_ttl = #{ntc_ttl},
             ntc_cn = #{ntc_cn}
+        WHERE ntc_sn = #{ntc_sn}
+    </update>
+
+    <!-- 글 삭제 -->
+    <update id="deleteTxt" parameterType="com.example.withus.vo.FreeVo">
+        UPDATE tb_ntc
+        SET use_yn = #{use_yn}
         WHERE ntc_sn = #{ntc_sn}
     </update>
 </mapper>

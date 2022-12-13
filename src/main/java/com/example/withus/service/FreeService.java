@@ -12,4 +12,5 @@ public interface FreeService {
     List<FreeVo> getFree(String Y);
     List<FreeVo> choiceFree(FreeVo freeVo);
     Integer getNtcSn(Integer ntc_sn);
+
 }

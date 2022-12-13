@@ -45,7 +45,9 @@
                     <button class="button1 btn-lg btn-block" type="button" onclick="location.href='/freeupdate'">수정</button>
                 </div>
                 <div style="display: inline-block">
-                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">삭제</button>
+                    <form action="/freedelete" method="post">
+                    <button class="button2 btn-lg btn-block" type="submit" onclick="delTxt()">삭제</button>
+                    </form>
                 </div>
             </div>
         </div>
