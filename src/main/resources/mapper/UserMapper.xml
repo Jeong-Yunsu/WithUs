@@ -42,19 +42,19 @@
     <select id="getUserByEmail" resultType="com.example.withus.vo.UserVo">
         SELECT *
         FROM tb_user
-        WHERE mbr_id = #{mbr_id}
+        WHERE mbr_id = #{mbr_id} and use_yn = 'Y'
     </select>
 
     <select id="getUserBySn" resultType="com.example.withus.vo.UserVo">
         SELECT *
         FROM tb_user
-        WHERE mbr_sn = #{mbr_sn}
+        WHERE mbr_sn = #{mbr_sn} and use_yn = 'Y'
     </select>
 
     <select id="getUserById" resultType="com.example.withus.vo.UserVo">
         SELECT *
         FROM tb_user
-        WHERE mbr_id = #{mbr_id}
+        WHERE mbr_id = #{mbr_id} and use_yn = 'Y'
     </select>
 
     <!-- 회원정보 수정 -->
