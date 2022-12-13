@@ -69,7 +69,7 @@
     <!-- 탈퇴 -->
     <update id="deleteUser" parameterType="com.example.withus.vo.UserVo">
         UPDATE tb_user
-        FROM use_yn = 'N'
+        SET use_yn = 'N'
         WHERE mbr_sn = #{mbr_sn}
     </update>
 
