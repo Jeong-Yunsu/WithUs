@@ -31,39 +31,28 @@ public class FreeController {
         Map<String, Object> res = new HashMap<>();
         res.put("success", Boolean.FALSE);
         Character sd = 'Y';
-
         vo.setUse_yn(sd);//(Character(session.getAttribute("intteSeq").toString()));
-
-
         List<FreeVo> searchList = freeServiceImpl.choiceFree(vo);
-
         res.put("searchList", searchList);
-
-
         return new Gson().toJson(res).getBytes("UTF-8");
     }
 
+    // ***********************
     @GetMapping("/free")
     public String freepost(HttpSession session, Model model) {
-
-
         Integer mbr_sn = (Integer) session.getAttribute("userSn");
         String sd = "Y";
         List<FreeVo> freelist = freeServiceImpl.getFree(sd);
-
-
         model.addAttribute("freelist",freelist);
-
-
         return "free";
     }
+
     @GetMapping("/free/{sn}")
     public String inpost(@PathVariable String sn, HttpSession session, Model model) {
         int ntcSn = Integer.parseInt(sn);
         //Integer mbr_sn = (Integer) session.getAttribute("userSn");
         List<FreeVo> golist = freeServiceImpl.clickFree(ntcSn);
         model.addAttribute("golist", golist);
-
         return "freeone";
     }
 
@@ -71,8 +60,7 @@ public class FreeController {
     public String enroll(HttpSession session, Model model){
         Integer sn = (Integer) session.getAttribute("userSn");
         UserVo userVo = userServiceImpl.getUserBySn(sn);
-        model.addAttribute("user",userVo);//회원가입 페이지
-
+        model.addAttribute("user",userVo);
         return "freepost";
     }
 
@@ -88,5 +76,4 @@ public class FreeController {
         }
         return "redirect:/free";
     }
-
 }

@@ -10,8 +10,5 @@ public interface FreeMapper {
     void insertFree(FreeVo freeVo);
     List<FreeVo> clickFree(Integer mbr_sn);
     List<FreeVo> choiceFree(FreeVo freeVo);
-
     List<FreeVo> getFree(String Y);
-
-
 }

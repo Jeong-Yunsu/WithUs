@@ -66,21 +66,21 @@
                             </table>
                         </div>
                     </div>
-                        <div>
-                            <button class="button1" onclick="location.href='/free/post'" style="float: right">글쓰기</button>
-                        </div>
-                        <div>
-                            <select class="W180" name="searchCnd" id="searchCnd" style="float: left">
-                                <option value="0">전체</option>
-                                <option value="1">제목</option>
-                                <option value="2">내용</option>
-                            </select>
-                            <input type="text" id="searchWrd" name="searchWrd" placeholder="검색어를 입력하세요." style="float: left">
-                            <button  onclick="search()">검색</button>
-                        </div>
-
+                    <div>
+                        <button class="button1" onclick="location.href='/free/post'" style="float: right">글쓰기</button>
+                    </div>
+                    <div>
+                        <select class="W180" name="searchCnd" id="searchCnd" style="float: left">
+                            <option value="0">전체</option>
+                            <option value="1">제목</option>
+                            <option value="2">내용</option>
+                        </select>
+                        <input type="text" id="searchWrd" name="searchWrd" placeholder="검색어를 입력하세요." style="float: left">
+                        <button  onclick="search()">검색</button>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
+

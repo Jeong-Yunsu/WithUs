@@ -14,9 +14,7 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class FreeServiceImpl implements FreeService{
-
     private final FreeMapper freeMapper;
-
     public void insertFree(FreeVo freeVo) {
         int mbr_sn = freeVo.getMbr_sn();
 
@@ -25,22 +23,14 @@ public class FreeServiceImpl implements FreeService{
 
         freeMapper.insertFree(freeVo);
     }
-
-
     public List<FreeVo> clickFree(int mbr_sn) {
         return  freeMapper.clickFree(mbr_sn);
     }
-
     @Override
     public List<FreeVo> getFree(String Y) {
         return freeMapper.getFree(Y);
     }
-
-
     public List<FreeVo> choiceFree(FreeVo  freeVo) {
-
         return freeMapper.choiceFree(freeVo);
-
     }
-
 }

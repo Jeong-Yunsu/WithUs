@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>User List</title>
-    <link rel="stylesheet" type="text/css" href="../css/write.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -81,7 +81,7 @@
         align-items: center;
         justify-content: center;
         transform: translateX(0px);
-        opacity: 0;
+        /*opacity: 0;*/
         transition: all 900ms cubic-bezier(.9, 0, .33, 1);
     }
     nav .nav-links .link {
@@ -106,6 +106,16 @@
     a:hover{
         color: #222;
     }
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    button{
+        all:unset;
+    }
 </style>
 
 <body>
@@ -118,13 +128,13 @@
         <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
         <a href="/free" class="link">자유게시판</a>
         <form action="/logout" method="post">
-            <button type="submit" class="link" all="unset">로그아웃</button>
+            <button type="submit" class="link" style="cursor:pointer" all="unset">로그아웃</button>
         </form>
     </div>
 </nav>
 
 <div type="button" class="container" >
-    <div class="input-form-backgroud row">
+    <div class="input-form-background row">
         <div class="input-form col-md-12 mx-auto">
             <c:forEach items="${list}" var="u">
                 <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">${u.mbr_nm}님의 마이페이지</h1>
