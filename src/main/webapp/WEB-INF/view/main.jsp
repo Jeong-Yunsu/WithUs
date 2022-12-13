@@ -71,7 +71,7 @@
             <a href="/free" class="link">자유게시판</a>
 <%--            <a href="/post" class="link">Post Test</a>--%>
             <form action="/logout" method="post">
-                <button type="submit" class="link" all="unset">로그아웃</button>
+                <button type="submit" class="link" style='cursor:pointer' all="unset">로그아웃</button>
             </form>
         </div>
     </nav>

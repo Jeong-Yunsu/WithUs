@@ -19,3 +19,89 @@ table.table2 td {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
 }
+
+ .id_ok{
+     color: #57a9ef;
+     display: none;
+ }
+.id_already{
+    color: #ec134d;
+    display: none;
+}
+.id_check {
+    color: #ec134d;
+    display: none;
+}
+body {
+    min-height: 100vh;
+    background: #eaeaea;
+    /*background: -webkit-gradient(linear, left bottom, right top, from(#FF9F9F), to(#FFFAD7));*/
+    /*background: -webkit-linear-gradient(bottom left, #FF9F9F 0%, #FFFAD7 100%);*/
+    /*background: -moz-linear-gradient(bottom left, #FF9F9F 0%, #FFFAD7 100%);*/
+    /*background: -o-linear-gradient(bottom left, #FF9F9F 0%, #FFFAD7 100%);*/
+    /*background: linear-gradient(to top right, #FF9F9F 0%, #FFFAD7 100%);*/
+}
+.input-form {
+    max-width: 800px;
+    margin-top: 80px;
+    padding: 32px;
+
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+}
+.button1 {
+    background-color:#FF9F9F;
+    color: #fff;
+    border:none;
+    border-radius:15px;
+}
+.button1:hover {
+    background-color:#E97777;
+    transition: 0.7s;
+}
+.button2 {
+    background-color: #b9b6b6;
+    color: #fff;
+    border:none;
+    border-radius:15px;
+}
+.button2:hover {
+    background-color:#a6a4a4;
+    transition: 0.7s;
+}
+label {
+    font-weight: bold;
+    display: block;
+    font-size: 20px;
+}
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    transition: border 0.5s ease-in-out;
+}
+[type="radio"]:checked {
+    border: 0.4em solid tomato;
+}
+[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    cursor: pointer;
+}
+input {
+    height: 45px;
+    border: solid #cbccc9;
+    border-radius: 10px;
+}
+select {
+    height: 45px;
+    border: solid #cbccc9;
+    border-radius: 10px;
+}

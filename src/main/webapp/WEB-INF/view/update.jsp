@@ -10,56 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<style>
-    body {
-        min-height: 100vh;
-        background: #eaeaea;
-    }
-    .input-form {
-        max-width: 800px;
-        margin-top: 80px;
-        padding: 32px;
 
-        background: #fff;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
-    }
-    .button1 {
-        background-color:#FF9F9F;
-        color: #fff;
-        border:none;
-        border-radius:15px;
-    }
-    .button1:hover {
-        background-color:#E97777;
-        transition: 0.7s;
-    }
-    .button2 {
-        background-color: #b9b6b6;
-        color: #fff;
-        border:none;
-        border-radius:15px;
-    }
-    .button2:hover {
-        background-color:#a6a4a4;
-        transition: 0.7s;
-    }
-    label {
-        font-weight: bold;
-        display: block;
-        font-size: 20px;
-    }
-    input {
-        height: 45px;
-        border: solid #cbccc9;
-        border-radius: 10px;
-    }
-</style>
+    <link rel="stylesheet" type="text/css" href="../css/update.css">
+</head>
 
 <body>
 <div class="container" style="margin-top: 150px">
