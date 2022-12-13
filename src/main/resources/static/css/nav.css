@@ -1,0 +1,104 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #eaeaea;
+}
+.input-form {
+    max-width: 800px;
+    margin-top: 230px;
+    padding: 32px;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+}
+.button1 {
+    background-color:#FF9F9F;
+    color: #fff;
+    border:none;
+    border-radius:15px;
+}
+.button1:hover {
+    background-color:#E97777;
+    transition: 0.7s;
+}
+.button2 {
+    background-color: #b9b6b6;
+    color: #fff;
+    border:none;
+    border-radius:15px;
+}
+.button2:hover {
+    background-color:#a6a4a4;
+    transition: 0.7s;
+}
+label {
+    font-weight: bold;
+    display: block;
+    font-size: 27px;
+}
+p {
+    height: 45px;
+    border-bottom: solid #cbccc9;
+    font-size: 20px;
+}
+nav{
+    position: relative;
+    float: left;
+    transform: translateX(0px);
+    background-color: #FF9F9F;
+    width: 400px;
+    height: 100%;
+}
+nav .nav-links {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0px);
+    /*opacity: 0;*/
+    transition: all 900ms cubic-bezier(.9, 0, .33, 1);
+}
+nav .nav-links .link {
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+}
+nav .nav-links .link:hover {
+    color: rgba(0, 0, 0, .5);
+}
+a{
+    margin: 0 20px;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 400ms ease;
+}
+a:hover{
+    color: #222;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn-logout{
+    all:unset;
+}
