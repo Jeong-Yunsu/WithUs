@@ -100,6 +100,7 @@
     </div>
 
     <!--지도 정보-->
+
         <nav id="sub">
             <form id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
@@ -124,6 +125,7 @@
                 </div>
                 <input id="modifyBtn" type="submit" value="수정하기">
             </form>
+            <!-- 스토리 모아보기-->
             <form id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
                     <ul class="story-ul">
@@ -171,8 +173,6 @@
         $("#storyForm").show();
     }
 
-    function subShow() {
-
-    }
+    func
 </script>
 

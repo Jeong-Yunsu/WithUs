@@ -46,10 +46,10 @@ button:hover{cursor:pointer}iframe{border:none!important}
 
     padding-top:19px;
     padding-bottom:19px}
-.row .cell:nth-child(1){width:110px;padding-left:40px}
-.row .cell:nth-child(2){width:260px}
-.row .cell:nth-child(3){width:200px}
-.row .cell:nth-child(4){width:290px}
+.row .cell:nth-child(1){width:100px;padding-left:40px}
+.row .cell:nth-child(2){width:200px}
+.row .cell:nth-child(3){width:150px}
+.row .cell:nth-child(4){width:150px}
 .table,.row{width:100%!important}
 .row:hover{background-color: #f1f1f1;cursor:pointer}
 .row.header:hover{background-color: #E97777;cursor:pointer}

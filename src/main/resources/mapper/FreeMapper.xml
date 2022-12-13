@@ -25,9 +25,9 @@
 
     <!-- 게시글 가져오기 -->
     <select id="getFree" resultType="com.example.withus.vo.FreeVo">
-        SELECT *
-        FROM tb_ntc
-        WHERE use_yn = 'Y'
+        SELECT A.*, B.mbr_nm
+        FROM tb_ntc AS A LEFT JOIN tb_user AS B
+        ON A.use_yn = 'Y' and A.mbr_sn = B.mbr_sn
     </select>
 
     <!-- 게시글 클릭 -->

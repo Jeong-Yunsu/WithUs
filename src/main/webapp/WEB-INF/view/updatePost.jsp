@@ -81,7 +81,7 @@
         var result = confirm("이전 페이지로 돌아가시겠습니까?");
 
         if(result) {
-            return history.go(-1);
+            return history.back();
         } else {
             return false
         }

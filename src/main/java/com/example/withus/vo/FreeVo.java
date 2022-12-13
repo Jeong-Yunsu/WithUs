@@ -19,4 +19,6 @@ public class FreeVo {
 
     private String searchCnd = "0";
     private String searchWrd = "";
+
+    private String mbr_nm;
 }

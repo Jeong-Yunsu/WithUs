@@ -6,12 +6,14 @@
         SELECT *
         FROM tb_txt
         WHERE gr_sn = #{group}
+        ORDER BY txt_date DESC;
     </select>
     <!-- 유저 sn 통틀어서 테이블 가져오기 -->
     <select id="getmbrPostList" resultType="com.example.withus.vo.PostVo">
         SELECT *
         FROM tb_txt
         WHERE mbr_sn = #{mbr_sn}
+        ORDER BY txt_date DESC;
     </select>
 
     <!-- 게시물 작성 -->
