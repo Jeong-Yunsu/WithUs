@@ -11,4 +11,8 @@ public interface FreeMapper {
     List<FreeVo> clickFree(Integer mbr_sn);
     List<FreeVo> choiceFree(FreeVo freeVo);
     List<FreeVo> getFree(String Y);
+    FreeVo getTxtBySn(Integer ntc_sn);
+
+    // 수정
+    void updateTxt(FreeVo freeVo);
 }

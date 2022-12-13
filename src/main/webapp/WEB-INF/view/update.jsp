@@ -5,7 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>회원 정보 수정</title>
-    <link rel="stylesheet" type="text/css" href="../css/write.css">
     <script type="text/javascript" src="/js/signup/password.js" defer></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -45,7 +44,7 @@
                 <br>
                 <div>
                     <button class="button1 btn-lg btn-block" type="submit">수정하기</button>
-                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">뒤로가기</button>
+                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
                 </div>
             </form>
         </div>

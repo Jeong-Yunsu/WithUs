@@ -86,7 +86,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    // 회원 정보 수정 페이지
+    // 회원 정보 수정 페이지 이동
     @GetMapping("/update")
     public String toUpdatePage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");

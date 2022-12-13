@@ -37,10 +37,10 @@ public class FreeController {
         return new Gson().toJson(res).getBytes("UTF-8");
     }
 
-    // ***********************
     @GetMapping("/free")
     public String freepost(HttpSession session, Model model) {
-        Integer mbr_sn = (Integer) session.getAttribute("userSn");
+//        Integer ntc_sn = freeServiceImpl.getNtcSn()
+
         String sd = "Y";
         List<FreeVo> freelist = freeServiceImpl.getFree(sd);
         model.addAttribute("freelist",freelist);
@@ -50,7 +50,7 @@ public class FreeController {
     @GetMapping("/free/{sn}")
     public String inpost(@PathVariable String sn, HttpSession session, Model model) {
         int ntcSn = Integer.parseInt(sn);
-        //Integer mbr_sn = (Integer) session.getAttribute("userSn");
+        session.setAttribute("ntcSn", ntcSn);
         List<FreeVo> golist = freeServiceImpl.clickFree(ntcSn);
         model.addAttribute("golist", golist);
         return "freeone";
@@ -76,4 +76,24 @@ public class FreeController {
         }
         return "redirect:/free";
     }
+
+    // 글 수정 페이지 이동
+    @GetMapping("/freeupdate")
+    public String teUpdateTxt(HttpSession session, Model model) {
+        Integer ntcSn = (Integer) session.getAttribute("ntcSn");
+        FreeVo freeVo = freeServiceImpl.getTxtBySn(ntcSn);
+        model.addAttribute("free", freeVo);
+        return "freeupdate";
+    }
+
+    // 글 수정
+    @PostMapping("/freeupdate")
+    public String modifyTxt(HttpSession session, FreeVo freeVo) {
+        Integer ntcSn = (Integer) session.getAttribute("ntcSn");
+        freeVo.setNtc_sn(ntcSn);
+        freeServiceImpl.modifyTxt(freeVo);
+        return "redirect:/free";
+    }
+
+
 }

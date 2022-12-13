@@ -15,6 +15,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class FreeServiceImpl implements FreeService{
     private final FreeMapper freeMapper;
+    public FreeVo getTxtBySn(Integer ntc_sn){
+        return freeMapper.getTxtBySn(ntc_sn);
+    }
     public void insertFree(FreeVo freeVo) {
         int mbr_sn = freeVo.getMbr_sn();
 
@@ -23,8 +26,8 @@ public class FreeServiceImpl implements FreeService{
 
         freeMapper.insertFree(freeVo);
     }
-    public List<FreeVo> clickFree(int mbr_sn) {
-        return  freeMapper.clickFree(mbr_sn);
+    public List<FreeVo> clickFree(int ntc_sn) {
+        return  freeMapper.clickFree(ntc_sn);
     }
     @Override
     public List<FreeVo> getFree(String Y) {
@@ -32,5 +35,20 @@ public class FreeServiceImpl implements FreeService{
     }
     public List<FreeVo> choiceFree(FreeVo  freeVo) {
         return freeMapper.choiceFree(freeVo);
+    }
+
+    @Override
+    public Integer getNtcSn(Integer ntc_sn) {
+        FreeVo freeVo = freeMapper.getTxtBySn(ntc_sn);
+        return freeVo.getNtc_sn();
+    }
+
+    public void modifyTxt(FreeVo freeVo) {
+        String ntc_ttl = freeVo.getNtc_ttl();
+        String ntc_cn = freeVo.getNtc_cn();
+
+        freeVo.setNtc_ttl(ntc_ttl);
+        freeVo.setNtc_cn(ntc_cn);
+        freeMapper.updateTxt(freeVo);
     }
 }

@@ -60,11 +60,17 @@
         </if>
     </select>
 
-    <!-- 삭제 -->
-    <delete id="deleteFree">
-        DELETE FROM tb_ntc
-        WHERE ntc_cn = #{ntc_cn}
-    </delete>
+    <!-- 글 수정 -->
+    <select id="getTxtBySn" resultType="com.example.withus.vo.FreeVo">
+        SELECT *
+        FROM tb_ntc
+        WHERE ntc_sn = #{ntc_sn}
+    </select>
 
-
+    <update id="updateTxt" parameterType="com.example.withus.vo.FreeVo">
+        UPDATE tb_ntc
+        SET ntc_ttl = #{ntc_ttl},
+            ntc_cn = #{ntc_cn}
+        WHERE ntc_sn = #{ntc_sn}
+    </update>
 </mapper>

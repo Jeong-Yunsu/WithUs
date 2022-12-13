@@ -8,7 +8,5 @@ public interface UserService {
     void signUp(UserVo userVo);
     LoginResponse login(UserVo userVo);
     Integer getMbrSn(String mbr_id, String password);
-
     int idCheck(String mbr_id);
-
 }
