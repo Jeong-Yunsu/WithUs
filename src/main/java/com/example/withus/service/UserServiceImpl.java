@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService {
         userVo.setMbr_id(mbr_id);
         userMapper.updateUser(userVo);
     }
-    public void withdraw(Integer mbr_sn) {
+    public void withdraw(int mbr_sn) {
         userMapper.deleteUser(mbr_sn);
     }
 

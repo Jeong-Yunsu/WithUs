@@ -110,7 +110,7 @@
                     <li id =phone></li>
                     <li id =distance></li>
                 </ul>
-                <input id="btn5" type="submit" value="게시물 작성하기">
+                <input id="btn5" type="submit" value="스토리 작성하기">
             </form>
             <form id="infoForm" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>

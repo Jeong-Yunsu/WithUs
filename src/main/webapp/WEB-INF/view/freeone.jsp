@@ -42,7 +42,7 @@
                     <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">뒤로 가기</button>
                 </div>
                 <div style="display: inline-block">
-                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">게시물 수정</button>
+                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='main'">게시물 수정</button>
                 </div>
 
 
