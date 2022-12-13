@@ -39,9 +39,9 @@
 
     <!-- 게시글 검색 -->
     <select id="choiceFree" resultType="com.example.withus.vo.FreeVo">
-        SELECT *
-        FROM tb_ntc
-        WHERE use_yn = 'Y'
+        SELECT A.*, B.mbr_nm
+        FROM tb_ntc AS A LEFT JOIN tb_user AS B
+        ON A.use_yn = 'Y' and A.mbr_sn = B.mbr_sn
         <if test="searchCnd==1">
             AND  ntc_ttl LIKE CONCAT ('%', #{searchWrd},'%')
         </if>

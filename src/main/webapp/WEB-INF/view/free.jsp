@@ -48,7 +48,7 @@
                         </div>
                     <div class="wrap-table100">
                         <div class="table">
-                            <table>
+                            <table id="list">
                                 <div class="row header">
                                     <div class="cell">번호</div>
                                     <div class="cell">제목</div>
@@ -56,7 +56,7 @@
                                     <div class="cell">작성일</div>
                                 </div>
                                 <c:forEach var="list" items="${freelist}" varStatus="listvoStatus">
-                                    <div class="row" id="list" onclick="location.href='/free/${list.ntc_sn}'">
+                                    <div class="row" onclick="location.href='/free/${list.ntc_sn}'">
                                         <div class="cell" data-title="Full Name">${listvoStatus.index + 1}</div>
                                         <div class="cell" data-title="Age">${list.ntc_ttl}</div>
                                         <div class="cell" data-title="Age">${list.mbr_nm}</div>

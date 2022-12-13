@@ -15,8 +15,13 @@ function search(){
 
             var tempHtml = "";
             res.searchList.forEach(function(item, index) {
-                tempHtml += "<tr><td>" + (index+1) + "</td>" +
-                    "<td>" + "<a href=/free/" + item.ntc_sn + ">" + item.ntc_ttl + "</a>" + "</td>" + "</tr>"
+                tempHtml +=
+                    "<div class='row' onClick=\"location.href=\'/free/" + item.ntc_sn + "\'\">" +
+                    "<div class='cell' data-title='Full Name'>" + (index + 1)+ "</div>" +
+                    "<div class='cell' data-title='Age'>" + item.ntc_ttl + "</div>" +
+                    "<div class='cell' data-title='Age'>" + item.mbr_nm + "</div>" +
+                    "<div class='cell' data-title='Age'>" + item.rgtr_dt + "</div>" +
+                    "</div>"
             });
             $("#list").append(tempHtml);
         },
