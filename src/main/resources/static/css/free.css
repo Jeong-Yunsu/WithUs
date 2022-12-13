@@ -9,7 +9,7 @@ textarea{display:block;outline:none}
 textarea:focus,input:focus{border-color:transparent!important}
 button{outline:none!important;border:none;background:0 0}
 button:hover{cursor:pointer}iframe{border:none!important}
-.limiter{width:100%;margin:0 auto}
+.limiter{width:600px;margin:0 auto}
 .container-table100{width:100%;min-height:100vh;background: #eaeaea;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
 .wrap-table100{width:960px;border-radius:10px;overflow:hidden}
 .table{width:100%;display:table;margin:0}@media screen and (max-width:768px){
@@ -46,10 +46,10 @@ button:hover{cursor:pointer}iframe{border:none!important}
 
     padding-top:19px;
     padding-bottom:19px}
-.row .cell:nth-child(1){width:100px;padding-left:40px}
-.row .cell:nth-child(2){width:200px}
-.row .cell:nth-child(3){width:150px}
-.row .cell:nth-child(4){width:150px}
+.row .cell:nth-child(1){width:50px;padding-left:40px}
+.row .cell:nth-child(2){width:130px}
+.row .cell:nth-child(3){width:100px}
+.row .cell:nth-child(4){width:130px}
 .table,.row{width:100%!important}
 .row:hover{background-color: #f1f1f1;cursor:pointer}
 .row.header:hover{background-color: #E97777;cursor:pointer}
@@ -67,3 +67,22 @@ button:hover{cursor:pointer}iframe{border:none!important}
         line-height:1.2;
         font-weight:unset!important}
     .table,.row,.cell{width:100%!important}}
+
+.button1 {
+    background-color:#FF9F9F;
+    color: #fff;
+    border:none;
+    /*border-radius:15px;*/
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    margin-top: 10px;
+}
+.button1:hover {
+    background-color: #E97777;
+    transition: 0.7s;
+}
+h1 {
+    margin-bottom: 20px;
+}
