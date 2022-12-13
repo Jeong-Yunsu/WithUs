@@ -57,6 +57,7 @@
     </div>
 
     <nav id ="leftSlideBar">
+        <%--        <img src="image/bg_2.jpg" style="cursor:pointer;height: 50px;width: 50px" onclick="location.href='main'">--%>
         <div class="menu-btn">
             <div class="line line--1"></div>
             <div class="line line--2"></div>
@@ -71,7 +72,7 @@
             <a href="/free" class="link">자유게시판</a>
 <%--            <a href="/post" class="link">Post Test</a>--%>
             <form action="/logout" method="post">
-                <button type="submit" class="link" all="unset">로그아웃</button>
+                <button type="submit" class="link" style="cursor:pointer" all="unset">로그아웃</button>
             </form>
         </div>
     </nav>
