@@ -4,6 +4,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>User List</title>
 
     <!-- Bootstrap CSS -->
@@ -11,6 +12,8 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/freeone.css">
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
+
+    <script src="/js/notice.js" defer></script>
 </head>
 
 
@@ -39,29 +42,14 @@
             </c:forEach>
             <div style="float: right">
                 <div style="display: inline-block">
-                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">뒤로 가기</button>
+                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">수정</button>
                 </div>
                 <div style="display: inline-block">
-                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='main'">게시물 수정</button>
+                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">삭제</button>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
-
-
-<script>
-    function delOk(){
-        var result = confirm("이전 페이지로 돌아가시겠습니까?");
-
-        if(result) {
-            return history.back();
-        } else {
-            return false
-        }
-    }
-</script>

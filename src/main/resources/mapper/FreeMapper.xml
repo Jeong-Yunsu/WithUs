@@ -60,5 +60,11 @@
         </if>
     </select>
 
+    <!-- 삭제 -->
+    <delete id="deleteFree">
+        DELETE FROM tb_ntc
+        WHERE ntc_cn = #{ntc_cn}
+    </delete>
+
 
 </mapper>

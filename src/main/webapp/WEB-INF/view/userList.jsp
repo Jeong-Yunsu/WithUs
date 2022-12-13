@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
+
+    <script src="/js/notice.js" defer></script>
 </head>
 
 <body>
@@ -66,23 +68,4 @@
     </div>
 </div>
 </body>
-
-<script>
-    function delOk(){
-        var result = confirm("이전 페이지로 돌아가시겠습니까?");
-
-        if(result) {
-            return history.back();
-        } else {
-            return false
-        }
-    }
-    function work() {
-        var result = confirm("회원을 탈퇴 할 것인가요?");
-
-        if (result) {
-            alert("회원이 탈퇴되었습니다");
-        }
-    }
-</script>
 </html>
