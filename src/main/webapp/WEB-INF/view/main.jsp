@@ -70,7 +70,6 @@
             <a href="/date" class="link">캘린더</a>
             <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
             <a href="/free" class="link">자유게시판</a>
-<%--            <a href="/post" class="link">Post Test</a>--%>
             <form action="/logout" method="post">
                 <button type="submit" class="link" style="cursor:pointer" all="unset">로그아웃</button>
             </form>
@@ -83,7 +82,6 @@
             <div class="search">
                 <input type="search" id = "searchInput" name="searchInput" style="font-weight: bold" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
                 <input type="submit" id = "myKeywordSearch" name="myKeywordSearch" @click='searchAddress()' onclick='myFunction()'  class="search_btn" value="검색">
-
             </div>
 
             <div>
@@ -97,7 +95,7 @@
                     </div>
                 </div>
             </div>
-        </div><button type="button" class="infoWin" id="nowLo" style="background-color: #005cbf">내 위치</button>
+        </div><button type="button" class="infoWin" id="nowLo" style="background-color: #2f2f2f">내 위치</button>
     </div>
 
     <!--지도 정보-->
