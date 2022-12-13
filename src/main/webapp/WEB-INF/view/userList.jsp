@@ -113,7 +113,7 @@
         margin-right: auto;
         margin-left: auto;
     }
-    button{
+    .btn-logout{
         all:unset;
     }
 </style>
@@ -128,7 +128,7 @@
         <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
         <a href="/free" class="link">자유게시판</a>
         <form action="/logout" method="post">
-            <button type="submit" class="link" style="cursor:pointer" all="unset">로그아웃</button>
+            <button type="submit" class="link btn-logout" style="cursor:pointer" all="unset">로그아웃</button>
         </form>
     </div>
 </nav>
