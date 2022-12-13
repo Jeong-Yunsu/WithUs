@@ -55,14 +55,14 @@
                         <label>이메일</label>
                         <p>${u.mbr_email}</p>
                     </div>
-                    <div>
-                        <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">정보 수정</button>
-                        <form action="/delete" method="post">
-                            <button class="button2 btn-lg btn-block" type="submit">회원 탈퇴</button>
-                        </form>
-                        <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
-                    </div>
                 </form>
+                <div>
+                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">정보 수정</button>
+                    <form action="/delete" method="post">
+                        <button class="button2 btn-lg btn-block" style="margin-top: 7px; margin-bottom: 7px" type="submit">회원 탈퇴</button>
+                    </form>
+                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
+                </div>
             </c:forEach>
         </div>
     </div>
