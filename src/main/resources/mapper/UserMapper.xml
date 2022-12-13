@@ -21,8 +21,7 @@
             mbr_tel,
             mbr_email,
             rgtr_id,
-            rgtr_dt,
-            use_yn
+            rgtr_dt
         )
         VALUES
         (
@@ -35,8 +34,7 @@
             #{mbr_tel},
             #{mbr_email},
             #{rgtr_id},
-            #{rgtr_dt},
-            #{use_yn}
+            #{rgtr_dt}
         )
     </insert>
 

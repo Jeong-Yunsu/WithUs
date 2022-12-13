@@ -7,10 +7,10 @@ function delOk(){
         return false
     }
 }
-function work() {
-    var result = confirm("회원을 탈퇴 할 것인가요?");
+function delUser() {
+    var result = confirm("진짜로 탈퇴할거야??");
 
     if (result) {
-        alert("회원이 탈퇴되었습니다");
+        alert("회원이 탈퇴되었습니다.");
     }
 }

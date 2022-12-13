@@ -17,7 +17,8 @@
 
     <body>
         <nav>
-            <div class="nav-links">
+            <img src="image/bg_2.jpg" style="cursor:pointer;height: 159px;width: 150px;padding-top: 20px;margin-left: 18px" onclick="location.href='main'">
+            <div class="nav-links" style="padding-bottom: 300px">
                 <a href="/mypage" class="link">마이페이지</a>
                 <a href="/date" class="link">캘린더</a>
                 <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
@@ -28,10 +29,10 @@
             </div>
         </nav>
         <input type="hidden" id="contextPath" value="<%=request.getContextPath()%>">
-            <div class="limiter">
-                <div class="container-table100">
+        <div class="limiter">
+            <div class="container-table100">
+                <div>
                     <div>
-                        <div>
                         <div style="float: left">
                             <h1>자유게시판</h1>
                         </div>
@@ -69,6 +70,7 @@
                     <div>
                         <button class="button1" onclick="location.href='/free/post'" style="float: right">글쓰기</button>
                     </div>
+                </div>
             </div>
         </div>
     </body>

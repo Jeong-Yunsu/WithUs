@@ -18,7 +18,8 @@
 <%--<button type="button" class="img-button" onclick="location.href='main'"></button>--%>
 
 <nav>
-    <div class="nav-links">
+    <img src="image/bg_2.jpg" style="cursor:pointer;height: 159px;width: 150px;padding-top: 20px;margin-left: 18px" onclick="location.href='main'">
+    <div class="nav-links" style="padding-bottom: 300px">
         <a href="/mypage" class="link">마이페이지</a>
         <a href="/date" class="link">캘린더</a>
         <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
@@ -59,7 +60,7 @@
                 <div>
                     <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">정보 수정</button>
                     <form action="/delete" method="post">
-                        <button class="button2 btn-lg btn-block" style="margin-top: 7px; margin-bottom: 7px" type="submit">회원 탈퇴</button>
+                        <button class="button2 btn-lg btn-block" style="margin-top: 7px; margin-bottom: 7px" type="submit" onclick="delUser()">회원 탈퇴</button>
                     </form>
                     <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
                 </div>

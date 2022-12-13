@@ -64,7 +64,7 @@
                     <input type="text" style="width: 100%" class="form-control2" name="mbr_tel" placeholder="전화번호(-를 제외하시오)" required>
                 </div>
                 <div class="mb-3">
-                    <label>생일(선택)</label>
+                    <label>생년월일(선택)</label>
                     <input type="text" style="width: 40%" class="form-control2" name="yy" id="yy" placeholder="년(4자)" oninput="handleInputLength(this, 4)">
                     <select style="width: 29%" class="form-control2" id="mm", name="mm">
                         <option value="">월</option>
