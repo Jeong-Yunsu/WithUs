@@ -35,9 +35,9 @@ public class MainController {
 //        return "post";
 //    }
 
-    @RequestMapping("/postList")
+    @RequestMapping("/store")
     public String postListPage() {
-        return "postList";
+        return "store";
     }
 
     @RequestMapping("/date")

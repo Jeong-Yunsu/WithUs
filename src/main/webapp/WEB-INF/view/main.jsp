@@ -68,12 +68,13 @@
         <div class="nav-links" style="font-family: 'TmoneyRoundWindExtraBold'">
 
             <a href="/mypage" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">마이페이지</a>
-            <button href="" class="link" style="font-family: 'TmoneyRoundWindExtraBold';" id="btn-story" style='cursor:pointer' onclick="storyShow()" >추억 모아보기</button>
+            <button href="" class="link" style="font-family: 'TmoneyRoundWindExtraBold';cursor:pointer" id="btn-story" onclick="storyShow()" >추억 모아보기</button>
             <a href="/date" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">캘린더</a>
             <a href="/chat" class="link" style="font-family: 'TmoneyRoundWindExtraBold';"onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
             <a href="/free" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">자유게시판</a>
+            <a href="/store" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">스토어 바로가기</a>
             <form action="/logout" method="post">
-                <button type="submit" class="link" style="font-family: 'TmoneyRoundWindExtraBold';"cursor:pointer" all="unset">로그아웃</button>
+                <button type="submit" class="link" style="font-family: 'TmoneyRoundWindExtraBold';cursor:pointer" all="unset">로그아웃</button>
             </form>
         </div>
     </nav>
@@ -104,7 +105,6 @@
     </div>
 
     <!--지도 정보-->
-    <div id="navGrid">
         <nav id="sub">
             <form class="LeftForm" id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
@@ -150,7 +150,6 @@
             </form>
         </nav>
 <%--        <img src="resources/img/baner.jpg"   width=400px height=100px>--%>
-    </div>
 
     <!--스토리-->
 <%--                <nav class="test-story">--%>
