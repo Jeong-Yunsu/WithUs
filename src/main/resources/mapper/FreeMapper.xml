@@ -29,6 +29,7 @@
         FROM tb_ntc AS A LEFT JOIN tb_user AS B
         ON A.mbr_sn = B.mbr_sn
         WHERE A.use_yn = 'Y'
+        ORDER BY rgtr_dt desc
     </select>
 
     <!-- 게시글 클릭 -->
