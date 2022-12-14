@@ -30,6 +30,7 @@
     width: 100%;
 }
 .infoWin{
+    font-family: 'TmoneyRoundWindExtraBold';
     padding-top:5px;
     padding-bottom:5px;
     padding-left:5px;
@@ -47,4 +48,21 @@
     order: 1;
     position: relative;
 }
-#sub{ display:grid;order: 2;grid-template-rows:  1fr 0.1fr;}
+#sub{ font-family: 'TmoneyRoundWindExtraBold';display:grid;order: 1;grid-template-rows:  1fr 0.1fr;}
+#navGrid>img{
+    order: 2;
+    z-index: 3005;
+}
+.area{
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+.LeftForm{
+    /*background-color: #6E6E6E;*/
+    opacity: 80%;
+    margin: 10px;
+}
+.btn{
+    width: auto;
+    margin: 5px;
+    margin-top: 18px
+}

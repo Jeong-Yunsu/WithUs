@@ -129,7 +129,7 @@ function setData(MyList){
             map: map,
             position: itLocation,
             icon:{
-                content:['<div class=infoWin style="background-color:#FF9F9F">' +
+                content:['<div class=infoWin style="background-color:#FF9F9F;font-family: \'TmoneyRoundWindExtraBold\';">' +
                 '<div style ="font-weight: bold;font-size:18px">'+item.txt_nm+'</div>'+ // 제목
                 '<div style ="font-weight: normal;font-size:14px">'+item.txt_date+'</div>'+
                 '</div>'
@@ -273,6 +273,11 @@ function getData(target){
                         $("#send").show();
                         $("#storyForm").hide();
 
+                        $("#category_name").show();
+                        $("#place_url").show();
+                        $("#phone").show();
+                        $("#distance").show();
+
                         $("#locationTitle").html(" <strong>" + item.place_name + "</strong>");
                         $("#category_name").val(item.category_name);
                         $("#place_url").val(item.place_url);
@@ -298,11 +303,11 @@ function getData(target){
                 map.setZoom(16);
 
             } catch (error) {
-                $("#locationTitle").html(" <strong>*정보 없음*</strong>");
-                $("#category_name").html("<li>" + "" + "</li>");
-                $("#place_url").html("<li>" + "" + "</li>");
-                $("#phone").html("<li>" + "" + "</li>");
-                $("#distance").html("<li>" + "" + "</li>");
+                $("#locationTitle").html(" <strong>정보가 없습니다.</strong>");
+                $("#category_name").hide();
+                $("#place_url").hide();
+                $("#phone").hide();
+                $("#distance").hide();
             }
         });
 }

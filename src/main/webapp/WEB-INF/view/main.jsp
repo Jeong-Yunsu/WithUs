@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/mainSub.css">
     <link rel="stylesheet" type="text/css" href="/css/mainSearch.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
 
     <script src="/js/mainSidebar.js" defer></script>
     <script src="/js/mainSub.js" defer></script>
@@ -64,7 +65,7 @@
             <div class="line line--3"></div>
         </div>
 
-        <div class="nav-links">
+        <div class="nav-links" style="font-family: 'TmoneyRoundWindExtraBold'">
             <a href="/mypage" class="link">마이페이지</a>
             <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >추억 모아보기</button>
             <a href="/date" class="link">캘린더</a>
@@ -81,49 +82,53 @@
         <div id="address">
             <div class="search">
                 <input type="search" id = "searchInput" name="searchInput" style="font-weight: bold" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
-                <input type="submit" id = "myKeywordSearch" name="myKeywordSearch" @click='searchAddress()' onclick='myFunction()'  class="search_btn" value="검색">
+                <input type="submit" id = "myKeywordSearch" name="myKeywordSearch" @click='searchAddress()' onclick='myFunction()' style="font-family: 'TmoneyRoundWindExtraBold';" class="search_btn" value="검색">
+
             </div>
 
             <div>
                 <div style="width: 300px;height: 100%;border: 1px solid black; background: white">
                     <div v-if="resultList.length > 0">
-                        <div class="list_wrap" v-for='result in resultList' @:click='move(result.x,result.y)' style="width: 300px;height: 100%;border: 1px solid black;">
-                            <p class="txt01">지번: {{result.address_name}}</p>
-                            <p class="txt03">도로명: {{result.road_address_name}}</p>
-                            <p class="txt01">상호명: {{result.place_name}}</p>
+                        <div class="list_wrap" v-for='result in resultList' @:click='move(result.x,result.y)' style="font-size: 12px; width: 300px;height: 100%;border: 1px solid black;">
+                            <div style="margin: 10px">
+                                <p class="txt01" style="font-weight: bold">상호명: {{result.place_name}}</p>
+                                <p class="txt01">지번: {{result.address_name}}</p>
+                                <p class="txt03">도로명: {{result.road_address_name}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><button type="button" class="infoWin" id="nowLo" style="background-color: #2f2f2f">내 위치</button>
+        </div><button type="button" class="infoWin" id="nowLo" style="background-color: #2f2f2f;height: available">내 위치</button>
     </div>
 
     <!--지도 정보-->
+    <div id="navGrid">
         <nav id="sub">
-            <form id="send" action="sendLocation" method="GET">
+            <form class="LeftForm" id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
                 <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
-                <div id = locationTitle></div>
+                <div id = locationTitle style="font-size: 24px;margin: 5px;margin: 13px; font-family: 'TmoneyRoundWindExtraBold';"></div>
                 <ul>
                     <li id =category_name></li>
                     <li id =place_url></li>
                     <li id =phone></li>
                     <li id =distance></li>
                 </ul>
-                <input id="btn5" type="submit" value="스토리 작성하기">
+                <input id="btn5"  class="btn" type="submit" value="스토리 작성하기">
             </form>
-            <form id="infoForm" action="sendLocation" method="GET">
+            <form class="LeftForm" id="infoForm" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>
                 <p><input type="hidden" name="longiVal2" id="longiVal2" value="longi"></p></br>
                 <div id = txtPic></div> <%--  <img src="/images/stickman.gif" alt="Stickman" width="24" height="39">--%>
-                <div id = txtTitle style="font-size: 20px"></div>
-                <div id="myTxt" style="background-color: #FFFFFF;border-radius: 10px;">
-                    <div id = txtContent style="font-size: 15px"></div></br>
-                    <div id = txtDate style="float: right" ></div>
+                <div id = txtTitle style="font-family: 'TmoneyRoundWindExtraBold';font-size: 24px;margin: 5px;margin-bottom: 13px"></div>
+                <div id="myTxt" style="margin:5px;background-color: #FFFFFF;border-radius: 10px;">
+                    <div id = txtContent style="font-size: 15px; margin: 5px"></div></br>
+                    <div id = txtDate style="float: right; margin: 3px" ></div>
                 </div>
-                <input id="modifyBtn" type="submit" value="수정하기">
+                <input id="modifyBtn" class="btn" type="submit" value="수정하기">
             </form>
-            <form id="storyForm" action="" method="GET" style="overflow: auto">
+            <form class="LeftForm" id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
                     <ul class="story-ul">
 <%--                        <label class="story-label">[제목]</label>--%>
@@ -143,7 +148,8 @@
                 </c:forEach>
             </form>
         </nav>
-
+<%--        <img src="resources/img/baner.jpg"   width=400px height=100px>--%>
+    </div>
 
     <!--스토리-->
 <%--                <nav class="test-story">--%>
