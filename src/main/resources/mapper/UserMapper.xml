@@ -62,7 +62,8 @@
         UPDATE tb_user
         SET mbr_nick = #{mbr_nick},
             password = #{password},
-            mbr_tel = #{mbr_tel}
+            mbr_tel = #{mbr_tel},
+            mbr_email = #{mbr_email}
         WHERE mbr_sn = #{mbr_sn}
     </update>
 

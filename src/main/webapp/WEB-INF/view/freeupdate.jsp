@@ -33,7 +33,7 @@
                 <div class="mb-3">
                     <label>내용</label>
 <%--                    <textarea type = "text" name="ntc_cn" cols=85 rows=15 value ="${free.ntc_cn}" required></textarea>--%>
-                    <input type = "text" class="form-control2 textbox" name ="ntc_cn" size=50 value ="${free.ntc_cn}" required>
+                    <textarea type = "text" name ="ntc_cn" size=50 value="${free.ntc_cn}" cols=85 rows=15 required></textarea>
                 </div>
                 <div>
                     <button class="button1 btn-lg btn-block" type="submit">작성하기</button>

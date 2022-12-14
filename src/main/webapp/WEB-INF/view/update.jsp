@@ -41,6 +41,10 @@
                     <label>전화번호</label>
                     <input type="text" style="width: 100%" name="mbr_tel"value="${user.mbr_tel}" size=50 required>
                 </div>
+                <div class="mb-3">
+                    <label>이메일</label>
+                    <input type="text" style="width: 100%" name="mbr_email"value="${user.mbr_email}" size=50 required>
+                </div>
                 <br>
                 <div>
                     <button class="button1 btn-lg btn-block" type="submit">수정하기</button>
