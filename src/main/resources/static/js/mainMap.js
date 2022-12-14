@@ -5,20 +5,15 @@ var infoWindow;
 var SearchMarkerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
-var readlist=[
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"ㅋㅋㅋㅋㅋ","txt_date":"2022-12-17","txt_loc_lat":"35.8727089","txt_loc_lng":"128.7085681","txt_nm":"경도위도잘들어가는거봐 ㅋㅋㅋㅋ","txt_pic":"","txt_sn":55},
-    {"gr_sn":1,"mbr_sn":86,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"dd","txt_date":"2022-12-21","txt_loc_lat":"35.7688718","txt_loc_lng":"128.7495952","txt_nm":"dd","txt_pic":"","txt_sn":56},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"asdf","txt_date":"2022-12-06","txt_loc_lat":"35.9191897","txt_loc_lng":"128.650332","txt_nm":"나다2","txt_pic":"","txt_sn":58},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"df","txt_date":"2022-11-28","txt_loc_lat":"35.8994466","txt_loc_lng":"128.6659961","txt_nm":"asd","txt_pic":"","txt_sn":59},
-    {"gr_sn":1,"mbr_sn":120,"rgtr_dt":"2022-12-12 12:03:28","rgtr_id":0,"test_nm":"","txt_cn":"gdgd","txt_date":"2022-12-09","txt_loc_lat":"35.8752475","txt_loc_lng":"128.6974102","txt_nm":"안녕하세요","txt_pic":"","txt_sn":60}
-];
+var readlist= new Object();
+var MyMarkerList=[];
 
 $(document).ready(function(){
 
     // 코드수정 반영 디버깅용
     //alert(crd.latitude+","+crd.longitude);
 
-    // console.log("data: "+readlist);
+    getMyData();
 
     // 처음 접속했을때 오른쪽 네비바에 스토리 추가?
     $("#send").hide();
@@ -31,6 +26,28 @@ $(document).ready(function(){
     });
 
 });
+function getMyData(){
+    $.ajax({
+        async:true,
+        type : "POST",
+        url : "test",
+        dataType:"json",
+        contentType : 'application/json; charset=UTF-8',
+        // data:{
+        //   mbr_sn:124
+        // },
+        success : function(data) {
+            console.log(data);
+            setData(data)
+        },
+        error : function(xhr, status, error) {
+            alert('error');
+        }
+    });
+
+
+}
+
 function myFunction() {
     // var x = document.getElementById("myInput");
     // document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
@@ -116,8 +133,11 @@ function setMyMap() {
     // };
 }
 function setData(List){
+    for(var i=0;i<List.length;i++){
+        console.log("i : "+List[i]);
 
-    List.forEach(function (item){
+
+        var item = List[i];
         let itLocation = new naver.maps.LatLng(item.txt_loc_lat,item.txt_loc_lng);
         var marker = new naver.maps.Marker({
             map: map,
@@ -132,31 +152,30 @@ function setData(List){
             }
         });
         // 게시글 정보창 띄우기
-//         var infowindow = new naver.maps.InfoWindow({
-//             maxWidth: 500,
-//             backgroundColor: "#eee",
-//             borderColor: "#FFFFFF",
-//             borderWidth: 5,
-//             anchorSize: new naver.maps.Size(30, 30),
-//             anchorSkew: true,
-//             anchorColor: "#eee",
-//             pixelOffset: new naver.maps.Point(0, -10)
-//         });
-//
-//
-        // infowindow.setContent([
-        //             '<div class=infoWin style="background-color: #808080">' +
-        //                 '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
-        //                  '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
-        //                     '</div>'
-        //
-        //         ].join(''));
+        var infowindow = new naver.maps.InfoWindow({
+            maxWidth: 500,
+            backgroundColor: "#eee",
+            borderColor: "#FFFFFF",
+            borderWidth: 5,
+            anchorSize: new naver.maps.Size(30, 30),
+            anchorSkew: true,
+            anchorColor: "#eee",
+            pixelOffset: new naver.maps.Point(0, -10)
+        });
+
+
+        infowindow.setContent([
+                    '<div class=infoWin style="background-color: #808080">' +
+                        '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
+                         '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+                            '</div>'
+
+                ].join(''));
 
         // 게시글 네비바에 띄우기
         naver.maps.Event.addListener(marker, "click", function(e) {
 
             infoWindow.close();
-
 
             $("#send").hide();
             $("#infoForm").show();
@@ -164,7 +183,7 @@ function setData(List){
             // $("#sub").css("background-color", "yellow");
 
             // 서버에서 들고오면 수정해야함------------------------------------------
-            $("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
+            //$("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
             $("#txtTitle").html(" <strong>" + item.txt_nm + "</strong>");
@@ -177,10 +196,13 @@ function setData(List){
 
             //infowindow.open(map, marker);
         });
-
+        naver.maps.Event.addListener(marker, 'mouseover', function(e) {
+            infoWindow.close();
+            infowindow.open(map, marker);
+        });
         //infowindow.open(map, marker);
-    });
-};
+    };
+}
 function searchCoordinateToAddress(latlng) {
 
     infoWindow.close();
@@ -267,7 +289,6 @@ function getData(target){
                         $("#send").show();
                         $("#storyForm").hide();
 
-                        // 서버에서 들고오면 수정해야함------------------------------------------
                         $("#locationTitle").html(" <strong>" + item.place_name + "</strong>");
                         $("#category_name").val(item.category_name);
                         $("#place_url").val(item.place_url);

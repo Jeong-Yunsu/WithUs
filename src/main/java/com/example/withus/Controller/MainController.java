@@ -2,9 +2,7 @@ package com.example.withus.Controller;
 
 import com.example.withus.service.PostServiceImpl;
 import com.example.withus.service.ScheduleServiceImpl;
-import com.example.withus.service.UserService;
 import com.example.withus.service.UserServiceImpl;
-import com.example.withus.vo.LoginResponse;
 import com.example.withus.vo.PostVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,5 +65,10 @@ public class MainController {
         //System.out.println(postList);
         System.out.println(result);
         return "main";
+    }
+    @RequestMapping("/test")
+    public String testPage() {
+        System.out.println("테스트 성공");
+        return "test";
     }
 }

@@ -57,6 +57,7 @@
     </div>
 
     <nav id ="leftSlideBar">
+        <%--        <img src="image/bg_2.jpg" style="cursor:pointer;height: 50px;width: 50px" onclick="location.href='main'">--%>
         <div class="menu-btn">
             <div class="line line--1"></div>
             <div class="line line--2"></div>
@@ -64,7 +65,6 @@
         </div>
 
         <div class="nav-links">
-            <img src="image/bg_2.jpg" style="cursor:pointer;height: 150px;width: 150px;padding-top: 10px;margin-right: 220px" onclick="location.href='main'">
             <a href="/mypage" class="link">마이페이지</a>
             <button href="" class="link" id="btn-story" style='cursor:pointer' onclick="storyShow()" >추억 모아보기</button>
             <a href="/date" class="link">캘린더</a>
