@@ -49,9 +49,6 @@ function getMyData(){
 }
 
 function myFunction() {
-    // var x = document.getElementById("myInput");
-    // document.getElementById("demo").innerHTML = "You are searching for: " + x.value;
-    // event.preventDefault();
     getData($("#searchInput").val());
 }
 
@@ -88,9 +85,13 @@ function setMyMap() {
     infoWindow = new naver.maps.InfoWindow({
         anchorSkew: true
     });
-    //infoWindow.open(map, marker);
+    infoWindow.setContent([
+        '<div class=infoWin style="background-color: #005cbf">' +
+        '<div style ="font-weight: bold;font-size:17px">'+'현재 위치'+'</div>'+ // 제목
+        '</div>'
 
-    setData(readlist); // 게시물 지도에 마커로 표시
+    ].join(''));
+    infoWindow.open(map, marker);
 
     map.setCursor('pointer');
     map.getPanes().floatPane.appendChild(menuLayer[0]);
@@ -106,18 +107,6 @@ function setMyMap() {
         // setMarkerAndInfo(e);
     });
 
-    // naver.maps.Event.addListener(map, 'keydown', function(e) {
-    //     var keyboardEvent = e.keyboardEvent,
-    //         keyCode = keyboardEvent.keyCode || keyboardEvent.which;
-    //
-    //     var ESC = 27;
-    //
-    //     if (keyCode === ESC) {
-    //         keyboardEvent.preventDefault();
-    //         menuLayer.hide();
-    //     }
-    // });
-
     naver.maps.Event.addListener(map, 'mousedown', function(e) {
         menuLayer.hide();
     });
@@ -132,12 +121,9 @@ function setMyMap() {
     //     }).html(coordHtml);
     // };
 }
-function setData(List){
-    for(var i=0;i<List.length;i++){
-        console.log("i : "+List[i]);
+function setData(MyList){
 
-
-        var item = List[i];
+    MyList.forEach(function (item){
         let itLocation = new naver.maps.LatLng(item.txt_loc_lat,item.txt_loc_lng);
         var marker = new naver.maps.Marker({
             map: map,
@@ -165,12 +151,12 @@ function setData(List){
 
 
         infowindow.setContent([
-                    '<div class=infoWin style="background-color: #808080">' +
-                        '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
-                         '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
-                            '</div>'
+            '<div class=infoWin style="background-color: #808080">' +
+            '<div style ="font-weight: bold;font-size:17px">'+item.txt_nm+'</div>'+ // 제목
+            '<div style ="font-weight: normal;font-size:13px">'+item.txt_date+'</div>'+
+            '</div>'
 
-                ].join(''));
+        ].join(''));
 
         // 게시글 네비바에 띄우기
         naver.maps.Event.addListener(marker, "click", function(e) {
@@ -182,7 +168,6 @@ function setData(List){
             $("#storyForm").hide();
             // $("#sub").css("background-color", "yellow");
 
-            // 서버에서 들고오면 수정해야함------------------------------------------
             //$("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
@@ -200,8 +185,7 @@ function setData(List){
             infoWindow.close();
             infowindow.open(map, marker);
         });
-        //infowindow.open(map, marker);
-    };
+    });
 }
 function searchCoordinateToAddress(latlng) {
 
