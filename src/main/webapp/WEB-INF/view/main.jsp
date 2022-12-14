@@ -33,6 +33,7 @@
             $("#myKeywordSearch").on("click", function(e) {
                 e.preventDefault();
             });
+
         });
     </script>
     <style>
@@ -66,7 +67,9 @@
         </div>
 
         <div class="nav-links" style="font-family: 'TmoneyRoundWindExtraBold'">
-
+            <div id="test">
+            <a href="/main" class="link" style="margin-bottom:200px;font-family: 'TmoneyRoundWindExtraBold';font-size: 50px;font-weight: bold">
+                with US</a>
             <a href="/mypage" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">마이페이지</a>
             <button href="" class="link" style="font-family: 'TmoneyRoundWindExtraBold';cursor:pointer" id="btn-story" onclick="storyShow()" >추억 모아보기</button>
             <a href="/date" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">캘린더</a>
@@ -76,6 +79,7 @@
             <form action="/logout" method="post">
                 <button type="submit" class="link" style="font-family: 'TmoneyRoundWindExtraBold';cursor:pointer" all="unset">로그아웃</button>
             </form>
+            </div>
         </div>
     </nav>
 
@@ -106,6 +110,7 @@
 
     <!--지도 정보-->
         <nav id="sub">
+
             <form class="LeftForm" id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
                 <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
@@ -131,7 +136,7 @@
             </form>
             <form class="LeftForm" id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
-                    <ul class="story-ul">
+                    <ol class="story-ul">
 <%--                        <label class="story-label">[제목]</label>--%>
 <%--                        <div class="story-div">${p.txt_nm}</div>--%>
 <%--                        <label class="story-label">[날짜]</label>--%>
@@ -145,7 +150,7 @@
 <%--                        <div>--%>
 <%--                            <a href="/postList">상세 보기</a>--%>
 <%--                        </div>--%>
-                    </ul>
+                    </ol>
                 </c:forEach>
             </form>
         </nav>
@@ -176,8 +181,5 @@
         $("#storyForm").show();
     }
 
-    function subShow() {
-
-    }
 </script>
 

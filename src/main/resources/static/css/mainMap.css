@@ -48,18 +48,13 @@
     order: 1;
     position: relative;
 }
-#sub{ font-family: 'TmoneyRoundWindExtraBold';display:grid;order: 1;grid-template-rows:  1fr 0.1fr;}
-#navGrid>img{
+#sub{font-family: 'TmoneyRoundWindExtraBold';display:grid;order: 1;grid-template-rows:  1fr 0.1fr;}
+#sub>img{
     order: 2;
-    z-index: 3005;
+    /*z-index: 3005;*/
 }
 .area{
     font-family: 'TmoneyRoundWindExtraBold';
-}
-.LeftForm{
-    /*background-color: #6E6E6E;*/
-    opacity: 80%;
-    /*margin: 7px;*/
 }
 .btn{
     width: auto;
@@ -68,4 +63,8 @@
 }
 .link{
     font-family: 'TmoneyRoundWindExtraBold';
+}
+#test{
+    display: grid;
+    grid-template-rows:  0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr;
 }

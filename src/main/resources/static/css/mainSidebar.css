@@ -92,6 +92,10 @@ nav .nav-links {
 nav .nav-links.fade-in {
     opacity: 1;
     transform: translateX(0px);
+
+}
+.nav-links fade-in{
+    margin-top: 0px;
 }
 nav .nav-links .link {
     margin: 20px 0;

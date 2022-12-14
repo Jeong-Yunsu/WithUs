@@ -304,10 +304,10 @@ function getData(target){
 
             } catch (error) {
                 $("#locationTitle").html(" <strong>정보가 없습니다.</strong>");
-                $("#category_name").hide();
-                $("#place_url").hide();
-                $("#phone").hide();
-                $("#distance").hide();
+                $("#category_name").html("<li></li>");
+                $("#place_url").html("<li></li>");
+                $("#phone").html("<li></li>");
+                $("#distance").html("<li></li>");
             }
         });
 }
