@@ -7,19 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>with US</title>
+    <style>
+        #logo a:hover{
+            color: grey;
+        }
+    </style>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-<!-- Navigation-->
-<img src="image/bg_2.jpg" style="cursor:pointer;height: 159px;width: 150px;padding-top: 20px;margin-left: 18px" onclick="location.href='main'">
+<div>
+    </br>
+    <a id="logo" href="/main" class="link" style="margin:120px;margin-bottom:0px;font-size:70px;font-family: 'TmoneyRoundWindExtraBold';text-decoration-color: grey;text-decoration-line : none;font-weight: bold;color: #E97777">
+    WITH US</a>
+</div>
+
 <!-- Product section-->
-<section class="py-5">
+<%--<section class="py-5" style="padding:0px" >--%>
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="image/photobook.jpg" alt="..." /></div>
@@ -41,7 +52,7 @@
             </div>
         </div>
     </div>
-</section>
+<%--</section>--%>
 <!-- Related items section-->
 <section class="py-5 bg-light">
     <div class="container px-4 px-lg-5 mt-5">

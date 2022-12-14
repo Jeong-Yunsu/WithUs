@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" type="text/css" href="../css/free.css">
         <link rel="stylesheet" type="text/css" href="../css/nav.css">
+        <link rel="stylesheet" type="text/css" href="/css/font.css">
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="js/free.js"></script>
@@ -17,15 +18,18 @@
 
     <body>
         <nav>
-            <img src="image/bg_2.jpg" style="cursor:pointer;height: 159px;width: 150px;padding-top: 20px;margin-left: 18px" onclick="location.href='main'">
             <div class="nav-links" style="padding-bottom: 300px">
-                <a href="/mypage" class="link">마이페이지</a>
-                <a href="/date" class="link">캘린더</a>
-                <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
-                <a href="/free" class="link">자유게시판</a>
-                <form action="/logout" method="post">
-                    <button type="submit" class="link btn-logout" style="cursor:pointer" all="unset">로그아웃</button>
-                </form>
+                <div id="test" style="margin-top: 200px">
+                    <a href="/main" class="link" style="margin-bottom:200px;font-family: 'TmoneyRoundWindExtraBold';font-size: 50px;font-weight: bold">
+                        with US</a>
+                    <a href="/mypage" class="link">마이페이지</a>
+                    <a href="/date" class="link">캘린더</a>
+                    <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
+                    <a href="/free" class="link">자유게시판</a>
+                    <form action="/logout" method="post">
+                        <button type="submit" class="link btn-logout" style="cursor:pointer" all="unset">로그아웃</button>
+                    </form>
+                </div>
             </div>
         </nav>
         <input type="hidden" id="contextPath" value="<%=request.getContextPath()%>">

@@ -102,3 +102,10 @@ a:hover{
 .btn-logout{
     all:unset;
 }
+#test{
+    display: grid;
+    grid-template-rows:  0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr;
+}
+.nav-links{
+    font-family: 'TmoneyRoundWindExtraBold';
+}
