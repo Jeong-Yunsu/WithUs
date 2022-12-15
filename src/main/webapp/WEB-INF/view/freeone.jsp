@@ -44,7 +44,8 @@
                 <div class="mb-3">
                     <label style="width: 730px;">${u.ntc_ttl}</label>
                     <br><br>
-                    <div style="height: 600px; width: 730px;">${u.ntc_cn}</div>
+                    <div style="height: 600px; width: 730px;">${u.ntc_cn
+                    }</div>
                 </div>
             </c:forEach>
             <div style="float: right">
