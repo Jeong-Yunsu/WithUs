@@ -139,14 +139,10 @@
             </form>
             <form class="LeftForm" id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
-                    <ol class="story-ul">
-                            <label class="story-label">${p.txt_nm}</label>
-                            <div class="story-div">날짜: ${p.txt_date}</div>
-                            <div class="story-div">사진: </div>
-                            <div class="story-div">내용: ${p.txt_cn}</div>
-<%--                        <div>--%>
-<%--                            <a href="/postList">상세 보기</a>--%>
-<%--                        </div>--%>
+                    <ol class="story-ul" style="background-image: url('image/${p.txt_pic}.jpg')" >
+                        <label class="story-label" STYLE="text-shadow: 2px 2px 2px #ffffff;">${p.txt_nm}</label><br>
+                        <div class="story-div" STYLE="text-shadow: 2px 2px 2px #ffffff;">날짜: ${p.txt_date}</div><br>
+                        <div class="story-div" STYLE="text-shadow: 2px 2px 2px #ffffff;">내용: ${p.txt_cn}</div>
                     </ol>
                 </c:forEach>
             </form>
