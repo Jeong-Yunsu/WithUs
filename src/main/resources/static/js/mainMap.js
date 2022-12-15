@@ -5,8 +5,6 @@ var infoWindow;
 var SearchMarkerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
-var readlist= new Object();
-var MyMarkerList=[];
 
 $(document).ready(function(){
 
@@ -129,10 +127,11 @@ function setData(MyList){
             map: map,
             position: itLocation,
             icon:{
-                content:['<div class=infoWin style="background-color:#FF9F9F;font-family: \'TmoneyRoundWindExtraBold\';">' +
+                content:[
+                    '<div class=infoWin style="background-color:#FF9F9F;font-family: \'TmoneyRoundWindExtraBold\';">' +
                 '<div style ="font-weight: bold;font-size:18px">'+item.txt_nm+'</div>'+ // 제목
                 '<div style ="font-weight: normal;font-size:14px">'+item.txt_date+'</div>'+
-                '</div>'
+                    '</div>'
 
                 ].join('')
             }
@@ -171,6 +170,7 @@ function setData(MyList){
             //$("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
+            //$("#l").val(item.txt_loc_lng);
             $("#txtTitle").html(" <strong>" + item.txt_nm + "</strong>");
             $("#txtContent").html(item.txt_cn);
             $("#txtDate").html(item.txt_date);

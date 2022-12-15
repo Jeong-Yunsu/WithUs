@@ -109,8 +109,8 @@
     </div>
 
     <!--지도 정보-->
-        <nav id="sub">
-
+        <nav id="sub" >
+            <div >
             <form class="LeftForm" id="send" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal" id="latiVal" value="latitude"></p>
                 <p><input type="hidden" name="longiVal" id="longiVal" value="longitude"></p>
@@ -126,23 +126,20 @@
             <form class="LeftForm" id="infoForm" action="sendLocation" method="GET">
                 <p><input type="hidden" name="latiVal2" id="latiVal2" value="lati"></p>
                 <p><input type="hidden" name="longiVal2" id="longiVal2" value="longi"></p></br>
-                <div id = txtPic></div> <%--  <img src="/images/stickman.gif" alt="Stickman" width="24" height="39">--%>
-                <div id = txtTitle style="font-family: 'TmoneyRoundWindExtraBold';font-size: 24px;margin: 5px;margin-bottom: 13px"></div>
-                <div id="myTxt" style="margin:5px;background-color: #FFFFFF;border-radius: 10px;">
-                    <div id = txtContent style="font-size: 15px; margin: 5px"></div></br>
-                    <div id = txtDate style="float: right; margin: 3px" ></div>
+                <div style="display: grid;grid-template-rows:350px 1fr ">
+                    <%--  db사진업로드 추후 추가--%>
+                    <img src="/image/mP2.jpg" style="width:350px; height:350px;margin: 10px;" ><br>
+                    <div id = txtTitle style="font-family: 'TmoneyRoundWindExtraBold';font-size: 24px;margin: 5px;margin-bottom: 13px"></div>
+                    <div id="myTxt" style="margin:5px;background-color: #FFFFFF;border-radius: 10px;">
+                        <div id = txtContent style="font-size: 15px; margin: 5px"></div></br>
+                        <div id = txtDate style="float: right; margin: 3px" ></div>
+                    </div>
                 </div>
                 <input id="modifyBtn" class="btn" type="submit" value="수정하기">
             </form>
             <form class="LeftForm" id="storyForm" action="" method="GET" style="overflow: auto">
                 <c:forEach items="${postlist}" var="p">
                     <ol class="story-ul">
-<%--                        <label class="story-label">[제목]</label>--%>
-<%--                        <div class="story-div">${p.txt_nm}</div>--%>
-<%--                        <label class="story-label">[날짜]</label>--%>
-<%--                        <div class="story-div">${p.txt_date}</div>--%>
-<%--                        <label class="story-label">[내용]</label>--%>
-<%--                        <div class="story-div">${p.txt_cn}</div>--%>
                             <label class="story-label">${p.txt_nm}</label>
                             <div class="story-div">날짜: ${p.txt_date}</div>
                             <div class="story-div">사진: </div>
@@ -153,23 +150,9 @@
                     </ol>
                 </c:forEach>
             </form>
-        </nav>
-<%--        <img src="resources/img/baner.jpg"   width=400px height=100px>--%>
+            </div>
 
-    <!--스토리-->
-<%--                <nav class="test-story">--%>
-<%--                    <c:forEach items="${postlist}" var="p">--%>
-<%--                        <ul class="story-ul">--%>
-<%--                            <li>[제목]</li>--%>
-<%--                            <li>${p.txt_nm}</li>--%>
-<%--                            <li>[날짜]</li>--%>
-<%--                            <li>${p.txt_date}</li>--%>
-<%--                            <li>--%>
-<%--                                <a href="/postList">상세 보기</a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </c:forEach>--%>
-<%--                </nav>--%>
+        </nav>
 </div>
 </body>
 </html>
