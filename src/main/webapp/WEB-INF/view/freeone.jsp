@@ -42,8 +42,9 @@
         <div class="input-form col-md-12 mx-auto">
             <c:forEach items="${golist}" var="u">
                 <div class="mb-3">
-                    <label>${u.ntc_ttl}</label>
-                    <tr>${u.ntc_cn}</tr>
+                    <label style="width: 730px;">${u.ntc_ttl}</label>
+                    <br><br>
+                    <div style="height: 600px; width: 730px;">${u.ntc_cn}</div>
                 </div>
             </c:forEach>
             <div style="float: right">

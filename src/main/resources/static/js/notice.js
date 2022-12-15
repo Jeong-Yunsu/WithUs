@@ -12,6 +12,8 @@ function delUser() {
 
     if (result) {
         alert("회원이 탈퇴되었습니다.");
+    } else {
+        return false
     }
 }
 function delTxt() {
@@ -19,5 +21,7 @@ function delTxt() {
 
     if (result) {
         alert("글이 삭제되었습니다.");
+    } else {
+        return false
     }
 }
