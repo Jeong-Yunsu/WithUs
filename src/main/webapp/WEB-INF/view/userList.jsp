@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>User List</title>
+    <title>withUS</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,7 +20,7 @@
 
 <nav>
     <div class="nav-links" style="padding-bottom: 300px">
-        <div id="test" style="margin-top: 200px">
+        <div id="test" style="margin-top: 265px">
             <a href="/main" class="link" style="margin-bottom:200px;font-family: 'TmoneyRoundWindExtraBold';font-size: 50px;font-weight: bold">
                 with US</a>
             <a href="/mypage" class="link">마이페이지</a>

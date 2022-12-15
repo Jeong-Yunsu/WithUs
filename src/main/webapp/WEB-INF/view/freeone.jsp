@@ -7,6 +7,7 @@
 
     <title>User List</title>
 
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,6 +22,9 @@
 
 <nav>
     <div class="nav-links">
+        <div id="test" style="margin-top: 0px">
+            <a href="/main" class="link" style="margin-bottom:200px;font-family: 'TmoneyRoundWindExtraBold';font-size: 50px;font-weight: bold">
+                with US</a>
         <a href="/mypage" class="link">마이페이지</a>
         <a href="/date" class="link">캘린더</a>
         <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
@@ -28,6 +32,7 @@
         <form action="/logout" method="post">
             <button type="submit" class="link btn-logout" style="cursor:pointer" all="unset">로그아웃</button>
         </form>
+        </div>
     </div>
 </nav>
 

@@ -20,8 +20,8 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7">
-                            <h3><strong>withUS</strong></h3>
-                            <p class="mb-4">당신의 추억 어쩌고 당신의 여행 어쩌고 위드어스 소개</p>
+                            <h1 style="font-size: 80px"><strong>withUS</strong></h1>
+                            <p class="mb-4" style="font-size: 20px">당신의 추억울 기록해드립니다.</p>
                             <input type="button" onclick="location.href='login'" value="시작하기" class="start-btn"/>
                         </div>
                     </div>

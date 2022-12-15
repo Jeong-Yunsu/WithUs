@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>User List</title>
+    <title>withUS</title>
     <link rel="stylesheet" type="text/css" href="../css/write.css">
 </head>
 
